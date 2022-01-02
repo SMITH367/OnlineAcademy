@@ -1,10 +1,21 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./styles/header.css";
 import icon from "./sources/icon.png";
 
 const Header = () => {
   const toogle = useRef();
+
+  const [active, setActive] = useState(false);
+
+  const changelog = () => {
+    if (active === true) {
+      setActive(false);
+    } else {
+      setActive(true);
+    }
+  };
+  useEffect(() => {}, [active]);
 
   const toogleHeader = () => {
     toogle.current.classList.toggle("nav-phone-visible");
@@ -23,9 +34,12 @@ const Header = () => {
           &#9776;
         </button>
         <ul ref={toogle} className="nav-menu">
-          <div className="nav-menu-item">
-            <Link to={data}>Perfil</Link>
-          </div>
+          {active === true && (
+            <div className="nav-menu-item">
+              <Link to={data}>Perfil</Link>{" "}
+            </div>
+          )}
+
           <li className="nav-menu-item">
             <Link to="/">Home</Link>
           </li>
@@ -45,9 +59,15 @@ const Header = () => {
           <li className="nav-menu-item">
             <Link to="/">Contacto</Link>
           </li>
-          <li className="nav-menu-item">
-            <Link to="/">Cerrar sesion</Link>
-          </li>
+          {active === true ? (
+            <li className="nav-menu-item">
+              <Link to="/">Cerrar sesion</Link>
+            </li>
+          ) : (
+            <li className="nav-menu-item">
+              <Link to="/">Inicia sesion</Link>
+            </li>
+          )}
         </ul>
       </nav>
     </header>
