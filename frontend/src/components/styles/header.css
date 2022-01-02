@@ -2,58 +2,60 @@
 
     position: fixed;
     width: 100%;
-    background: #232a34;
+    background: rgb(27, 133, 255);
     padding: 0;
+
+}
+
+.logo {
+    margin: auto;
+}
+
+.logo img {
+    width: 40%;
+
 }
 
 .nav {
     display: flex;
-    justify-content: space-between;
     max-width: 992px;
+    justify-content: space-between;
+    align-items: center;
     height: 80px;
     margin: 0 auto;
-    background: #232a34;
+    color: rgb(255, 255, 255);
 }
 
-.nav p {
+
+.nav a {
+
+    color: rgb(255, 255, 255);
     text-decoration: none;
-    color: rgb(210, 222, 231);
     font-weight: bolder;
     font-family: sans-serif;
 
 }
+
 
 .nav-menu {
 
     display: flex;
     list-style: none;
     align-items: center;
-    margin-right: 2em;
 
 }
 
 .nav-menu-item {
-
+    margin: 0 10px;
     line-height: 70px;
-    margin: auto 10px;
-
-
 }
 
 .nav-menu-item a:hover {
-    transition: all .2s;
-    margin: .1em;
-    padding: 5px;
-    font-size: 1.2em;
-    border: solid gray 1px;
-    border-radius: 5px;
-    color: #fff;
+
+    color: rgb(192, 192, 192);
 }
 
-.nav-menu-item a i {
-    font-size: 27px;
-    margin: 3px;
-}
+
 
 .toogle-init {
     font-size: 30px;
@@ -63,30 +65,20 @@
     display: none;
 }
 
-#side-bar {
-    position: absolute;
-    width: 300px;
-    height: 100%;
-    background: #232a34;
-    left: -300px;
-    transition: all 500ms linear;
-    margin-top: 10px;
-    padding: 20px;
-
-}
 
 
 @media (max-width: 768px) {
 
     .header {
         height: 75px;
+        font-size: 1.1em;
 
     }
 
 
     .nav-menu {
         flex-direction: column;
-        background: #232a34;
+        background: rgb(0, 132, 255);
         position: fixed;
         top: 75px;
         width: 100%;
