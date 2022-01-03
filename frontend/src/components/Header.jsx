@@ -6,7 +6,7 @@ import icon from "./sources/icon.png";
 const Header = () => {
   const toogle = useRef();
 
-  const [active, setActive] = useState(false);
+  const [active, setActive] = useState(true);
 
   const changelog = () => {
     if (active === true) {
@@ -26,7 +26,7 @@ const Header = () => {
       <nav className="nav">
         <div>
           <Link className="logo" to="/">
-            <img src={icon} alt="" srcset="" />
+            <img src={icon} alt="" />
           </Link>
         </div>
 
@@ -36,7 +36,9 @@ const Header = () => {
         <ul ref={toogle} className="nav-menu">
           {active === true && (
             <div className="nav-menu-item">
-              <Link to={data}>Perfil</Link>{" "}
+              <Link to={data} className="profile-text">
+                Perfil
+              </Link>{" "}
             </div>
           )}
 
@@ -61,11 +63,13 @@ const Header = () => {
           </li>
           {active === true ? (
             <li className="nav-menu-item">
-              <Link to="/">Cerrar sesion</Link>
+              <button className="btn-sesion red">Cerrar sesion</button>
             </li>
           ) : (
             <li className="nav-menu-item">
-              <Link to="/">Inicia sesion</Link>
+              <Link to="/" className="btn-sesion green">
+                Inicia sesion
+              </Link>
             </li>
           )}
         </ul>
