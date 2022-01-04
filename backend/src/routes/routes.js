@@ -60,6 +60,9 @@ router.delete('/user/:id', async (req, res) => {
 })
 
 router.post('/login', verifyLogin, (req, res) => {
+
+
+
     const user = {
         id: 1
     }
@@ -69,7 +72,13 @@ router.post('/login', verifyLogin, (req, res) => {
 
         if (err) return err
 
-        res.json(token);
+        const dataUser = {
+            name: req.body.name,
+            email: req.body.email,
+            accessToken: token
+        }
+        res.json(dataUser);
+
     })
 })
 
