@@ -1,26 +1,35 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef } from "react";
+import useUser from "../hooks/useUser";
 import { Link } from "react-router-dom";
 import "./styles/header.css";
 import icon from "./sources/icon.png";
 
-const Header = () => {
+const Header = ({ setUserDataStatus }) => {
   const toogle = useRef();
 
-  const [active, setActive] = useState(true);
+  let { login } = useUser();
 
-  const changelog = () => {
-    if (active === true) {
-      setActive(false);
-    } else {
-      setActive(true);
-    }
-  };
-  useEffect(() => {}, [active]);
+  let active = login;
 
   const toogleHeader = () => {
     toogle.current.classList.toggle("nav-phone-visible");
+    setUserDataStatus({
+      login: true,
+      name: "papaya",
+      email: "jajaja",
+    });
+    console.log(login);
+  };
+
+  const closeSesion = () => {
+    setUserDataStatus({
+      login: false,
+      name: null,
+      email: null,
+    });
   };
   const data = "/";
+
   return (
     <header className="header">
       <nav className="nav">
@@ -63,7 +72,9 @@ const Header = () => {
           </li>
           {active === true ? (
             <li className="nav-menu-item">
-              <button className="btn-sesion red">Cerrar sesion</button>
+              <button className="btn-sesion red" onClick={closeSesion}>
+                Cerrar sesion
+              </button>
             </li>
           ) : (
             <li className="nav-menu-item">
