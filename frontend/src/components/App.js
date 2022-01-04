@@ -15,11 +15,9 @@ const App = () => {
   return (
     <Usercontext.Provider value={userDataStatus}>
       <HashRouter>
+        <Header setUserDataStatus={setUserDataStatus}> </Header>
         <Routes>
-          <Route
-            path="/"
-            element={<Header setUserDataStatus={setUserDataStatus}> </Header>}
-          />
+          <Route path="/" element={<h1>Home</h1>} />
           <Route
             path="/login"
             element={<Login setUserDataStatus={setUserDataStatus}> </Login>}

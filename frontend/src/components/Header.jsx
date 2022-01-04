@@ -6,20 +6,11 @@ import icon from "./sources/icon.png";
 
 const Header = ({ setUserDataStatus }) => {
   const toogle = useRef();
-
   let { login } = useUser();
 
-  let active = login;
-
-  const toogleHeader = () => {
+  const toogleHeader = () =>
     toogle.current.classList.toggle("nav-phone-visible");
-    setUserDataStatus({
-      login: true,
-      name: "papaya",
-      email: "jajaja",
-    });
-    console.log(login);
-  };
+  const handleMenu = () => toogle.current.classList.toggle("nav-phone-visible");
 
   const closeSesion = () => {
     setUserDataStatus({
@@ -28,7 +19,6 @@ const Header = ({ setUserDataStatus }) => {
       email: null,
     });
   };
-  const data = "/";
 
   return (
     <header className="header">
@@ -42,10 +32,10 @@ const Header = ({ setUserDataStatus }) => {
         <button onClick={toogleHeader} className="toogle-init">
           &#9776;
         </button>
-        <ul ref={toogle} className="nav-menu">
-          {active === true && (
+        <ul ref={toogle} className="nav-menu" onClick={handleMenu}>
+          {login === true && (
             <div className="nav-menu-item">
-              <Link to={data} className="profile-text">
+              <Link to="/" className="profile-text">
                 Perfil
               </Link>{" "}
             </div>
@@ -70,7 +60,7 @@ const Header = ({ setUserDataStatus }) => {
           <li className="nav-menu-item">
             <Link to="/">Contacto</Link>
           </li>
-          {active === true ? (
+          {login === true ? (
             <li className="nav-menu-item">
               <button className="btn-sesion red" onClick={closeSesion}>
                 Cerrar sesion
@@ -78,7 +68,7 @@ const Header = ({ setUserDataStatus }) => {
             </li>
           ) : (
             <li className="nav-menu-item">
-              <Link to="/" className="btn-sesion green">
+              <Link to="/login" className="btn-sesion green">
                 Inicia sesion
               </Link>
             </li>
