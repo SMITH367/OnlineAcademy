@@ -6,7 +6,7 @@ import icon from "./sources/icon.png";
 
 const Header = ({ setUserDataStatus }) => {
   const toogle = useRef();
-  let { login } = useUser();
+  const { login } = useUser();
 
   const toogleHeader = () =>
     toogle.current.classList.toggle("nav-phone-visible");
@@ -18,8 +18,14 @@ const Header = ({ setUserDataStatus }) => {
       name: null,
       email: null,
     });
+    localStorage.removeItem("login");
+
+    localStorage.removeItem("name");
+
+    localStorage.removeItem("email");
   };
 
+  console.log(login);
   return (
     <header className="header">
       <nav className="nav">
@@ -33,7 +39,7 @@ const Header = ({ setUserDataStatus }) => {
           &#9776;
         </button>
         <ul ref={toogle} className="nav-menu" onClick={handleMenu}>
-          {login === true && (
+          {login === "true" && (
             <div className="nav-menu-item">
               <Link to="/" className="profile-text">
                 Perfil
@@ -60,7 +66,7 @@ const Header = ({ setUserDataStatus }) => {
           <li className="nav-menu-item">
             <Link to="/">Contacto</Link>
           </li>
-          {login === true ? (
+          {login === "true" ? (
             <li className="nav-menu-item">
               <button className="btn-sesion red" onClick={closeSesion}>
                 Cerrar sesion

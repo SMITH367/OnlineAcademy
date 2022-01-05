@@ -1,7 +1,0 @@
-const loginSesion = () => {
-
-}
-
-export {
-    loginSesion
-}

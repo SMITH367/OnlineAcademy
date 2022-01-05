@@ -16,21 +16,10 @@ const verifyToken = (req, res, next) => {
     }
 }
 
-const verifyLogin = async (req, res, next) => {
-
-    const dataUserLogin = req.body
-    const viewUser = await user.find(dataUserLogin)
-
-    if (viewUser.length > 0) {
-        next()
-    } else {
-        res.sendStatus(403)
-    }
-
-}
 
 
-router.get('/user', verifyToken, async (req, res) => {
+
+router.get('/user', async (req, res) => {
     const viewUser = await user.find()
     res.send(viewUser)
 })
@@ -59,27 +48,34 @@ router.delete('/user/:id', async (req, res) => {
     res.send("deleted")
 })
 
-router.post('/login', verifyLogin, (req, res) => {
+router.post('/login', async (req, res) => {
 
+    const dataUserLogin = req.body
+    const viewUser = await user.find(dataUserLogin)
 
-
-    const user = {
-        id: 1
-    }
-    jwt.sign({
-        user
-    }, 'secretKey', (err, token) => {
-
-        if (err) return err
-
-        const dataUser = {
-            name: req.body.name,
-            email: req.body.email,
-            accessToken: token
+    if (viewUser.length > 0) {
+        const user = {
+            id: 1
         }
-        res.json(dataUser);
+        jwt.sign({
+            user
+        }, 'secretKey', (err, token) => {
 
-    })
+            if (err) return err
+
+            const dataUser = {
+                name: viewUser[0].name,
+                email: viewUser[0].email,
+                accessToken: token
+            }
+            res.json(dataUser);
+
+        })
+    } else {
+        res.sendStatus(403)
+    }
+
+
 })
 
 module.exports = router

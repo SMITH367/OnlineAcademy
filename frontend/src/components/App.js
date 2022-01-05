@@ -7,9 +7,9 @@ import { Usercontext } from "../context/UserContext";
 
 const App = () => {
   let [userDataStatus, setUserDataStatus] = useState({
-    login: false,
-    name: null,
-    email: null,
+    login: localStorage.getItem("login"),
+    name: localStorage.getItem("name"),
+    email: localStorage.getItem("email"),
   });
 
   return (
@@ -17,7 +17,7 @@ const App = () => {
       <HashRouter>
         <Header setUserDataStatus={setUserDataStatus}> </Header>
         <Routes>
-          <Route path="/" element={<h1>Home</h1>} />
+          <Route path="/" element={<h1>Hola</h1>} />
           <Route
             path="/login"
             element={<Login setUserDataStatus={setUserDataStatus}> </Login>}
