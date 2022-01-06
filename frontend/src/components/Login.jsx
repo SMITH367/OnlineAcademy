@@ -1,22 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLoginSesion } from "../hooks/useLoginSesion";
-import { Header } from "./Header";
+import { Navigate } from "react-router";
 import "./styles/login.css";
 
-const Login = ({ setUserDataStatus }) => {
-  const originalLocation = window.location.href.split("/");
-
-  let newLocation = `${originalLocation[0]}//${originalLocation[1]}${originalLocation[2]}/?#/${originalLocation[4]}`;
-
-  window.location.href = newLocation;
-
+const Login = ({ setUserDataStatus, userDataStatus }) => {
   const loginSesion = useLoginSesion;
+
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
-  const userToLogin = () => {
-    loginSesion(setUserDataStatus, email, password);
-  };
+  useEffect(() => {
+    const originalLocation = window.location.href.split("/");
+    let newLocation = `${originalLocation[0]}//${originalLocation[1]}${originalLocation[2]}/?#/${originalLocation[4]}`;
+    window.location.href = newLocation;
+  }, []);
 
   return (
     <>
@@ -37,10 +34,14 @@ const Login = ({ setUserDataStatus }) => {
             placeholder="password"
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button className="loginBtn form-login-el " onClick={userToLogin}>
+          <button
+            className="loginBtn"
+            onClick={() => loginSesion(setUserDataStatus, email, password)}
+          >
             Iniciar sesion
           </button>
         </form>
+        {userDataStatus.login === "true" && <Navigate to="/"></Navigate>}
       </div>
     </>
   );

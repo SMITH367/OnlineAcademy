@@ -25,7 +25,6 @@ const Header = ({ setUserDataStatus }) => {
     localStorage.removeItem("email");
   };
 
-  console.log(login);
   return (
     <header className="header">
       <nav className="nav">
