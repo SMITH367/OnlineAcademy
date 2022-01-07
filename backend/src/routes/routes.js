@@ -25,9 +25,23 @@ router.get('/user', async (req, res) => {
 })
 
 router.post('/user', async (req, res) => {
-    const newUser = new user(req.body)
-    await newUser.save()
-    res.send("added")
+
+    console.log(req.body)
+    const viewUser = await user.find({
+        email: req.body.email
+    })
+    if (viewUser.length === 0) {
+
+        const newUser = new user(req.body)
+        await newUser.save()
+        res.json({
+            "added": "true"
+        })
+    } else {
+        res.send({
+            "added": "false"
+        })
+    }
 })
 
 router.put('/user/:id', async (req, res) => {

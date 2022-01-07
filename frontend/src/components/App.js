@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import { Header } from "./Header";
 import { Login } from "./Login";
+import { Register } from "./Register";
 import { Usercontext } from "../context/UserContext";
 
 const App = () => {
@@ -20,12 +21,11 @@ const App = () => {
           <Route path="/" element={<h1> Hola </h1>} />
           <Route
             path="/login"
-            element={
-              <Login
-                setUserDataStatus={setUserDataStatus}
-                userDataStatus={userDataStatus}
-              ></Login>
-            }
+            element={<Login setUserDataStatus={setUserDataStatus}> </Login>}
+          />{" "}
+          <Route
+            path="/register"
+            element={<Register userDataStatus={userDataStatus}> </Register>}
           />
         </Routes>{" "}
       </HashRouter>{" "}
