@@ -23,18 +23,19 @@ const RoutesOfLearn = () => {
 
       <div className="container">
         <h1 className="center">Conoce nuestras rutas de aprendizaje</h1>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis
-          eaque velit, at nisi facere delectus voluptatem, fugiat commodi iusto,
-          assumenda ullam quasi! Animi vero et laboriosam cumque ab, veniam
-          tenetur!
+        <p className="center">
+          Escoge uno de los caminos que tenemos para ti y aprende todo lo que
+          necesitas para insertarte en el mundo laboral.
         </p>
         <section className="routes">
           {dataRoute.map((el, id) => (
             <Link key={id} to={el.url} className="to-route">
               <div
-                className={`route-cont`}
-                Style={`background-color: ${el.color};  background-image:${el.background}`}
+                className="route-cont"
+                style={{
+                  backgroundColor: el.color,
+                  backgroundImage: `url(${el.background})`,
+                }}
               >
                 <img className="logo-route" src={el.logo} alt=""></img>
                 <p className="name-route">{el.name}</p>
