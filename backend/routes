@@ -1,19 +1,38 @@
 
 db.routes.insert({
-    name: "frontend",
+    name: "Desarrollo frontend",
     background:
-      "https://static.platzi.com/media/learningpath/ghosts/12f35955-dd05-4c7a-8c85-d925a1e6042b.jpg",
-    url: "/frontend",
+      "https://static.platzi.com/media/learningpath/ghosts/b9c8108a-a023-4218-9077-e647a6ef3aaf.jpg",
+    url: "/route/frontend",
     logo: "https://static.platzi.com/media/learningpath/badges/6475ba11-ef6a-401f-9144-d40f615e0cfc.jpg",
-    color: "red",
+    color: "rgb(174, 218, 0)",
+    description:"Aprende las tecnologias que necesitas en el desarrollo Front end, desde basico hasta avanzado y domina la web.",
     courses: [
       {
-        name_course: "html",
-        logo: "logohtml",
+        name_course: "HTML",
+        logo: "https://static.platzi.com/media/achievements/badges-html-css-afa64acb-64a4-486d-96a5-f930fbb7ee32.png",
       },
       {
-        name_course: "css",
-        logo: "logocss",
+        name_course: "CSS",
+        logo: "https://static.platzi.com/media/achievements/badge-css-grid-91153317-c981-4a38-a534-b651b4395267.png",
+      },
+      {
+        name_course: "Javascript",
+        logo: "https://static.platzi.com/media/achievements/badge-basicojs-e2ead888-428e-4f55-962c-8894aeaeacda.png",
+      },
+      {
+        name_course: "React Js (Intercambiable Angular)",
+        logo: "https://static.platzi.com/media/achievements/badge-react-2018-0a41bdc5-e874-45c9-ac67-98294c898da4.png",
+      },
+
+      {
+        name_course: "Angular Js (Intercambiable React)",
+        logo: "https://static.platzi.com/media/achievements/badge-angular-componentes-servicios-75f68ec3-48e0-430e-b7e2-889fad0d1984.png",
+      },
+
+      {
+        name_course: "Bootstrap",
+        logo: "https://static.platzi.com/media/achievements/1331-cda68a62-24e5-464a-95ca-6e5d339c7244.png",
       },
     ],
 })

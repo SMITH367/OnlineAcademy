@@ -7,6 +7,7 @@ const route = new Schema({
     name: String,
     background: String,
     url: String,
+    description: String,
     color: String,
     logo: String,
     courses: {
