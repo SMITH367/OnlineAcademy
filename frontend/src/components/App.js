@@ -4,6 +4,7 @@ import { HashRouter, Routes, Route } from "react-router-dom";
 import { Header } from "./Header";
 import { Login } from "./Login";
 import { Register } from "./Register";
+import { RoutesOfl } from "./RoutesOfl";
 import { Usercontext } from "../context/UserContext";
 
 const App = () => {
@@ -26,6 +27,10 @@ const App = () => {
           <Route
             path="/register"
             element={<Register userDataStatus={userDataStatus}> </Register>}
+          />
+          <Route
+            path="/routes"
+            element={<RoutesOfl userDataStatus={userDataStatus}> </RoutesOfl>}
           />
         </Routes>{" "}
       </HashRouter>{" "}

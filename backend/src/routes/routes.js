@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const user = require("../models/users")
+const route = require("../models/route")
 const jwt = require('jsonwebtoken')
 const database = require("../database")
 
@@ -89,7 +90,10 @@ router.post('/login', async (req, res) => {
         res.sendStatus(403)
     }
 
-
 })
 
+router.get('/routes', async (req, res) => {
+    const routes = await route.find()
+    res.send(routes)
+})
 module.exports = router

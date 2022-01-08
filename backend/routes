@@ -1,0 +1,19 @@
+
+db.routes.insert({
+    name: "frontend",
+    background:
+      "https://static.platzi.com/media/learningpath/ghosts/12f35955-dd05-4c7a-8c85-d925a1e6042b.jpg",
+    url: "/frontend",
+    logo: "https://static.platzi.com/media/learningpath/badges/6475ba11-ef6a-401f-9144-d40f615e0cfc.jpg",
+    color: "red",
+    courses: [
+      {
+        name_course: "html",
+        logo: "logohtml",
+      },
+      {
+        name_course: "css",
+        logo: "logocss",
+      },
+    ],
+})
