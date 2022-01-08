@@ -1,4 +1,12 @@
-# Getting Started with Create React App
+## This is a Fullstack javascript application.
+
+### Completed Online Academy created with MERN Stack
+
+This is a good online Academy example proyect, fullstack app
+
+(Frontend)
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
