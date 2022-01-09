@@ -96,10 +96,9 @@ router.get('/routes', async (req, res) => {
     const routes = await route.find()
     res.send(routes)
 })
-router.get('/route/:course', async (req, res) => {
-    console.log(req.params.course)
+router.get('/route/:route', async (req, res) => {
     const routes = await route.findOne({
-        "ident": `${req.params.course}`
+        "ident": `${req.params.route}`
     })
     res.send(routes)
 })

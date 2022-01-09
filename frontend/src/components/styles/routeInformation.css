@@ -1,0 +1,41 @@
+.r-course-cont {
+
+    margin-top: 1em;
+    align-items: center;
+    text-decoration: none;
+
+}
+
+.r-course-info {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
+.r-course-img {
+    width: 30%;
+}
+
+.route-information {
+    display: flex;
+    margin-top: 60px;
+    margin-bottom: 2em;
+}
+
+.route-information-courses {
+    width: 20%;
+}
+
+.route-information-info {
+    width: 80%;
+
+}
+
+.r-course-info-el {
+    margin: 10px;
+    text-decoration: none;
+}
+
+.route-logo-img {
+    width: 20%;
+}
