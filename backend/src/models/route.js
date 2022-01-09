@@ -13,7 +13,8 @@ const route = new Schema({
     courses: {
         type: Array,
         default: []
-    }
+    },
+    ident: String,
 
 })
 module.exports = mongose.model("routes", route)

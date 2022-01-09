@@ -34,7 +34,6 @@ const RoutesOfLearn = () => {
                 className="route-cont"
                 style={{
                   backgroundColor: el.color,
-                  backgroundImage: `url(${el.background})`,
                 }}
               >
                 <img className="logo-route" src={el.logo} alt=""></img>

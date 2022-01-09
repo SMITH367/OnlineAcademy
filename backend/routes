@@ -1,34 +1,26 @@
-
 db.routes.save({
-    name: "Desarrollo Backend",
-    background:"https://static.platzi.com/media/learningpath/ghosts/12f35955-dd05-4c7a-8c85-d925a1e6042b.jpg",
-    url: "/route/backend",
-    logo: "https://static.platzi.com/media/learningpath/emblems/5680c452-bf21-4983-9e94-e514a83292a7.jpg",
-    color: "rgb(0, 132, 255)",
-    description:"Aprende las tecnologias que necesitas en el desarrollo Back end, desde basico hasta avanzado y domina la programcion del lado del servidor.",
-    courses: [
-      {
-        name_course: "Mongo DB",
-        logo: "https://static.platzi.com/media/achievements/badge-mongo-db-5f684168-798f-42ad-a17c-2e8f0c40a477.png",
-      },
 
-      {
-        name_course: "Mysql",
-        logo: "https://static.platzi.com/media/achievements/1272-15ff4836-0221-4001-b945-5cf34bd65bab.png",
-      },
-
-      {
-        name_course: "Node JS",
-        logo: "https://static.platzi.com/media/achievements/piezas-nodejs-autenticacion-microservicios-redis_badge-754d4f34-9282-4793-a68e-4058.png",
-      },
-     
-        {
-        name_course: "Express Js",
-        logo: "https://static.platzi.com/media/achievements/badge-backend-nodejs-apirest-expressjs-3fc7bca3-8dcb-459c-9638-12c92d502f5f.png",
-      },
-      {
-        name_course: "Curso practico de node",
-        logo: "https://static.platzi.com/media/achievements/piezas-nodejs-base-de-datos-mongodb-websockets_badge-74ce0c20-7b2f-4550-93e5-1f1158.png",
-      },
-    ],
+	"name" : "Developper tools",
+	"url" : "/route/devTools",
+	"logo" : "https://static.platzi.com/media/achievements/1301-97adc02b-c21c-46fc-b753-c50bf1a98f67.png",
+	"color" : "rgb(0, 182, 15)",
+	"description" : "Aprende las herramientas que necesitas en el desarrollo software, desde basico hasta avanzado y domina las devtools.",
+	"courses" : [
+		{
+			"name_course" : "Terminal",
+			"logo" : "https://static.platzi.com/media/achievements/badge-terminal-5c5518b5-43d0-4387-b39e-3d85db446c5f.png"
+		},
+		{
+			"name_course" : "Git y Github",
+			"logo" : "https://static.platzi.com/media/achievements/badge-github-0b729570-934d-47d8-ba6b-610d7f15e0ec.png"
+		},
+		{
+			"name_course" : "Vs code",
+			"logo" : "https://static.platzi.com/media/achievements/badge-prework-configuracion-entorno-windows-8b168efb-2001-4f5e-938f-a333861ab31d.png"
+		},
+		{
+			"name_course" : "Docker",
+			"logo" : "https://static.platzi.com/media/achievements/badges-fundamentos-docker-c1277cec-3ef7-4557-9f83-2649bec9fe70.png"
+		},
+	]
 })

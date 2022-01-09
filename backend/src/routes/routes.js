@@ -96,4 +96,11 @@ router.get('/routes', async (req, res) => {
     const routes = await route.find()
     res.send(routes)
 })
+router.get('/route/:course', async (req, res) => {
+    console.log(req.params.course)
+    const routes = await route.findOne({
+        "ident": `${req.params.course}`
+    })
+    res.send(routes)
+})
 module.exports = router
