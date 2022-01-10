@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-
 import { HashRouter, Routes, Route } from "react-router-dom";
+import { Home } from "./Home";
 import { Header } from "./Header";
 import { Login } from "./Login";
 import { Register } from "./Register";
@@ -20,7 +20,7 @@ const App = () => {
       <HashRouter>
         <Header setUserDataStatus={setUserDataStatus}> </Header>{" "}
         <Routes>
-          <Route path="/" element={<h1> Hola </h1>} />
+          <Route path="/" element={<Home> </Home>} />
           <Route
             path="/login"
             element={<Login setUserDataStatus={setUserDataStatus}> </Login>}

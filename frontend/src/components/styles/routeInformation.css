@@ -1,5 +1,4 @@
 .r-course-cont {
-
     margin-top: 1em;
     align-items: center;
     text-decoration: none;
@@ -38,4 +37,28 @@
 
 .route-logo-img {
     width: 20%;
+}
+
+@media (max-width:768px) {
+
+
+    .route-information {
+        flex-direction: column-reverse;
+        flex-wrap: wrap;
+        margin-top: 1.4em;
+    }
+
+    .route-information-courses {
+        margin-top: 2em;
+        width: 100%;
+    }
+
+    .route-information-info {
+        width: 100%;
+    }
+
+    .r-course-img {
+        width: 15%;
+    }
+
 }
