@@ -2,10 +2,12 @@ const express = require('express')
 const router = express.Router()
 const user = require("../models/users")
 const route = require("../models/route")
+const course = require("../models/course")
 const jwt = require('jsonwebtoken')
 const database = require("../database")
 
 
+// Veryfing the token for auth
 const verifyToken = (req, res, next) => {
     const header = req.headers['authentication']
     if (header != undefined) {
@@ -19,12 +21,13 @@ const verifyToken = (req, res, next) => {
 
 
 
-
+//Getting all users
 router.get('/user', async (req, res) => {
     const viewUser = await user.find()
     res.send(viewUser)
 })
 
+//Creating a new user
 router.post('/user', async (req, res) => {
 
     console.log(req.body)
@@ -63,6 +66,7 @@ router.delete('/user/:id', async (req, res) => {
     res.send("deleted")
 })
 
+//Login sistem
 router.post('/login', async (req, res) => {
 
     const dataUserLogin = req.body
@@ -92,14 +96,26 @@ router.post('/login', async (req, res) => {
 
 })
 
+
+//Getting all routes
 router.get('/routes', async (req, res) => {
     const routes = await route.find()
     res.send(routes)
 })
+
+//Getting an indiviual route
 router.get('/route/:route', async (req, res) => {
     const routes = await route.findOne({
         "ident": `${req.params.route}`
     })
     res.send(routes)
 })
+
+//Getting all courses
+router.get('/courses', async (req, res) => {
+    const courses = await course.find()
+    res.send(courses)
+})
+
+
 module.exports = router

@@ -6,6 +6,8 @@ import { Login } from "./Login";
 import { Register } from "./Register";
 import { RoutesOfLearn } from "./RoutesOfLearn";
 import { RouteInformation } from "./RouteInformation";
+import { Courses } from "./Courses";
+import { CourseInformation } from "./CourseInformation";
 import { Usercontext } from "../context/UserContext";
 
 const App = () => {
@@ -34,6 +36,11 @@ const App = () => {
             path="/route/:route"
             element={<RouteInformation> </RouteInformation>}
           />{" "}
+          <Route
+            path="/course/:course"
+            element={<CourseInformation></CourseInformation>}
+          />{" "}
+          <Route path="/courses" element={<Courses></Courses>} />{" "}
         </Routes>{" "}
       </HashRouter>{" "}
     </Usercontext.Provider>

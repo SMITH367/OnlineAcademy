@@ -35,21 +35,21 @@ const RouteInformation = () => {
             </h6>
 
             <div className="route-information">
-              <section className="route-information-courses">
+              <article className="route-information-courses">
                 <h4 className="center">Cursos</h4>
                 {dataRoute.courses.map((el, id) => (
                   <Link key={id} to={el.url_course} className="r-course-cont">
-                    <article className="r-course-info">
+                    <section className="r-course-info">
                       <img
                         className="r-course-img r-course-info-el"
                         src={el.logo}
                         alt=""
                       />
                       <p className="r-course-info-el">{el.name_course}</p>
-                    </article>
+                    </section>
                   </Link>
                 ))}
-              </section>
+              </article>
               <section className="route-information-info center">
                 <img className="route-logo-img" src={dataRoute.logo} alt="" />
                 <h3>{dataRoute.description}</h3>

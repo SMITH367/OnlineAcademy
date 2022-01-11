@@ -55,7 +55,7 @@ const Header = ({ setUserDataStatus }) => {
           </li>
 
           <li className="nav-menu-item">
-            <Link to="/">Cursos</Link>
+            <Link to="/courses">Cursos</Link>
           </li>
 
           <li className="nav-menu-item">
