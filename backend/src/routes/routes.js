@@ -113,7 +113,15 @@ router.get('/route/:route', async (req, res) => {
 
 //Getting all courses
 router.get('/courses', async (req, res) => {
-    const courses = await course.find()
+    const courses = await course.find({}, {
+        "description": 0,
+        "instructor": 0,
+        "video": 0,
+        "resourses": 0,
+        "level": 0,
+        "comentaries": 0,
+        "proyect-description": 0,
+    })
     res.send(courses)
 })
 

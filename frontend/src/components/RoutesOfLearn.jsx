@@ -16,7 +16,6 @@ const RoutesOfLearn = () => {
     fetch();
   }, []);
 
-  console.log(dataRoute);
   return (
     <>
       <p>.</p>

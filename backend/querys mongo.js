@@ -37,10 +37,23 @@ db.courses.save({
 	"resourses": [],
 	"level": "Basico",
 	"comentaries": [],
-	"logo": "",
+	"logo": "https://static.platzi.com/media/achievements/badges-html-css-afa64acb-64a4-486d-96a5-f930fbb7ee32.png",
 	"linkC": "/view/html",
 	"ident": "html",
-	"proyect-description": "Para aplicar tus conocimientos, crea un blog sobre un tema que te guste, usando todas las etiquetas html que puedas y de manera semantica"
+	"proyect-description": "Para aplicar tus conocimientos, crea un blog sobre un tema que te guste, usando todas las etiquetas html que puedas y de manera semantica",
+})
 
+db.courses.save({
 
+	"name": "BOOTSTRAP",
+	"description": "En este curso aprenderas el framework de css mas popular, con el cual podras desarrollar tus vistas de manera rapida y sencilla",
+	"instructor": "Bluuweb",
+	"video": "https://www.youtube.com/watch?v=1kNwZbRiVcQ&t",
+	"resourses": [],
+	"level": "Intermedio",
+	"comentaries": [],
+	"logo": "https://static.platzi.com/media/achievements/1331-cda68a62-24e5-464a-95ca-6e5d339c7244.png",
+	"linkC": "/view/bootstrap",
+	"ident": "bootstrap",
+	"proyect-description": "Para aplicar tus conocimientos, crea una web completa para un negocio local, pero esta vez sin escribir una sola linea de css ¿te le mides?",
 })

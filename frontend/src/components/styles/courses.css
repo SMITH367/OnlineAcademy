@@ -1,0 +1,24 @@
+.courses-view-cont {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: center;
+
+}
+
+.courses-course {
+    width: 20%;
+    margin: 5px;
+    border: solid;
+}
+
+.courses-img {
+    width: 40%;
+}
+
+@media (max-width:768px) {
+    .courses-course {
+        width: 40%;
+    }
+}
