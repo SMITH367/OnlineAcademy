@@ -144,5 +144,18 @@ router.get('/courses/:course', async (req, res) => {
     res.send(courses)
 })
 
+router.get('/course/:course', async (req, res) => {
+    const courses = await course.find({
+        ident: req.params.course
+    }, {
+        "comentaries": 0,
+        "proyect-description": 0,
+        "video": 0
+
+
+    })
+    res.send(courses)
+})
+
 
 module.exports = router
