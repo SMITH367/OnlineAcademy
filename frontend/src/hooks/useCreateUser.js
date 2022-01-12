@@ -6,7 +6,9 @@ import {
   emailValidation,
 } from "../components/services/validations";
 
-const useCreateUser = async (userName, email, password, passwordConf) => {
+const useCreateUser = async (e, userName, email, password, passwordConf) => {
+
+  e.preventDefault()
   if (
     lengthValidation(email) === true &&
     lengthValidation(password) === true &&

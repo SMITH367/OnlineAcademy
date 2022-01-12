@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useLoginSesion } from "../hooks/useLoginSesion";
-import { useChangelocationServer } from "../hooks/useChangelocationServer";
 import useUser from "../hooks/useUser";
 import { Navigate } from "react-router";
 import { Link } from "react-router-dom";
@@ -11,7 +10,6 @@ const Login = ({ setUserDataStatus }) => {
 
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-  useChangelocationServer();
 
   const userData = useUser();
 
@@ -37,7 +35,7 @@ const Login = ({ setUserDataStatus }) => {
           />
           <button
             className="sesionBtn"
-            onClick={() => loginSesion(setUserDataStatus, email, password)}
+            onClick={(e) => loginSesion(e, setUserDataStatus, email, password)}
           >
             Iniciar sesion
           </button>

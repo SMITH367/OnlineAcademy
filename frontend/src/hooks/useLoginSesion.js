@@ -1,18 +1,22 @@
-import { FetchData } from "../components/services/fetchData";
+import {
+  FetchData
+} from "../components/services/fetchData";
 import {
   lengthValidation,
   emailValidation,
 } from "../components/services/validations";
 
-import { Navigate } from "react-router-dom";
+import {
+  Navigate
+} from "react-router-dom";
 
-const useLoginSesion = async (setUserDataStatus, email, password) => {
+const useLoginSesion = async (e, setUserDataStatus, email, password) => {
+  e.preventDefault()
   if (lengthValidation(email) === true && lengthValidation(password) === true) {
     if (emailValidation(email) === true) {
       const fetch = new FetchData("http://localhost:3000/login");
 
-      const dataUser = await fetch.FetchDataApi(
-        {
+      const dataUser = await fetch.FetchDataApi({
           email: email,
           password: password,
         },
@@ -30,7 +34,10 @@ const useLoginSesion = async (setUserDataStatus, email, password) => {
         localStorage.setItem("name", dataUser.name);
         localStorage.setItem("email", dataUser.email);
 
-        return <Navigate to={"/"} />;
+        return <Navigate to = {
+          "/"
+        }
+        />;
       } else {
         alert("Usuario o contraseña invalidos");
       }
@@ -42,4 +49,6 @@ const useLoginSesion = async (setUserDataStatus, email, password) => {
   }
 };
 
-export { useLoginSesion };
+export {
+  useLoginSesion
+};

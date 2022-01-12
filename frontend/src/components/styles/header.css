@@ -22,9 +22,13 @@
     height: 80px;
     margin: 0 auto;
     color: rgb(255, 255, 255);
+    line-height: 30px;
 
 }
 
+.nav li {
+    margin-top: 15px;
+}
 
 .nav a {
 
@@ -78,10 +82,14 @@
 .btn-sesion {
     border: none;
     color: #fff;
-    padding: 5px;
     border: solid .2px;
     border-radius: 5px;
 }
+
+.btn-sesion-login {
+    padding: 5px;
+}
+
 
 
 @media (max-width: 768px) {

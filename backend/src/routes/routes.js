@@ -125,5 +125,24 @@ router.get('/courses', async (req, res) => {
     res.send(courses)
 })
 
+router.get('/courses/:course', async (req, res) => {
+
+    const nameToS = req.params.course
+    const courses = await course.find({
+        "name": {
+            $regex: '.*' + nameToS + '.*'
+        }
+    }, {
+        "description": 0,
+        "instructor": 0,
+        "video": 0,
+        "resourses": 0,
+        "level": 0,
+        "comentaries": 0,
+        "proyect-description": 0,
+    })
+    res.send(courses)
+})
+
 
 module.exports = router

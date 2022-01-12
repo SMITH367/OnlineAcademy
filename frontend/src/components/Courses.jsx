@@ -5,39 +5,64 @@ import "./styles/courses.css";
 
 const Courses = () => {
   const [dataCourses, setDataCourses] = useState([]);
+  const [refesh, setRefesh] = useState(false);
+  const [courseSearch, setCourseSearch] = useState("");
   const url = "http://localhost:3000/courses";
 
   useEffect(() => {
     const fetch = async () => {
       const getData = new FetchData(url);
       const courses = await getData.FetchDataApiGet();
-      setDataCourses(courses);
+      if (courses !== null && courses !== undefined) setDataCourses(courses);
     };
     fetch();
-  }, []);
+  }, [refesh]);
 
-  console.log(dataCourses);
+  const SearchCourse = async (e, course) => {
+    e.preventDefault();
+    const getData = new FetchData(url + "/" + course);
+    const courses = await getData.FetchDataApiGet();
+    if (courses !== null && courses !== undefined) setDataCourses(courses);
+  };
+  const defRefresh = () => {
+    refesh === true ? setRefesh(false) : setRefesh(true);
+  };
+
   return (
     <>
       <p>.</p>
       <div className="container">
-        <h1 className="center">
-          Aprende con todos los cursos que tenemos para ti
-        </h1>
+        <h1 className="center">Aprende con todos nuestros cursos</h1>
 
-        <form>
-          <input type="text" placeholder="Busca tu curso aqui" />
-          <input type="button" value="Buscar" />
+        <form className="form-search-course center">
+          <input
+            type="text"
+            className="input-search-course "
+            placeholder="Busca tu curso aqui"
+            onChange={(e) => setCourseSearch(e.target.value)}
+          />
+          <input
+            type="button"
+            value="Buscar"
+            className="btn-courses"
+            onClick={(e) => SearchCourse(e, courseSearch.toUpperCase())}
+          />
+
+          <button className="btn-courses" onClick={defRefresh}>
+            Ver todos
+          </button>
         </form>
 
-        <article className="courses-view-cont center">
-          {dataCourses.map((el, id) => (
-            <Link key={id} to={el.linkC} className="courses-course">
-              <img className="courses-img" src={el.logo} alt="" />
-              <p>{el.name}</p>
-            </Link>
-          ))}
-        </article>
+        {dataCourses.length > 0 && (
+          <article className="courses-view-cont center">
+            {dataCourses.map((el, id) => (
+              <Link key={id} to={el.linkC} className="courses-course">
+                <img className="courses-img" src={el.logo} alt="" />
+                <p>{el.name}</p>
+              </Link>
+            ))}
+          </article>
+        )}
       </div>
     </>
   );

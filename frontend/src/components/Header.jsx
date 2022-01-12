@@ -39,11 +39,9 @@ const Header = ({ setUserDataStatus }) => {
         </button>
         <ul ref={toogle} className="nav-menu" onClick={handleMenu}>
           {login === "true" && (
-            <div className="nav-menu-item">
-              <Link to="/" className="profile-text">
-                Perfil
-              </Link>{" "}
-            </div>
+            <li className="nav-menu-item profile-text">
+              <Link to="/">Perfil</Link>{" "}
+            </li>
           )}
 
           <li className="nav-menu-item">
@@ -73,7 +71,7 @@ const Header = ({ setUserDataStatus }) => {
             </li>
           ) : (
             <li className="nav-menu-item">
-              <Link to="/login" className="btn-sesion green">
+              <Link to="/login" className="btn-sesion-login btn-sesion green">
                 Inicia sesion
               </Link>
             </li>

@@ -11,7 +11,7 @@ const RoutesOfLearn = () => {
     const fetch = async () => {
       const getData = new FetchData(url);
       const routes = await getData.FetchDataApiGet();
-      setDataRoute(routes);
+      if (routes !== null && routes !== undefined) setDataRoute(routes);
     };
     fetch();
   }, []);

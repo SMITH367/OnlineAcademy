@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useChangelocationServer } from "../hooks/useChangelocationServer";
 import { useCreateUser } from "../hooks/useCreateUser";
 import { Link } from "react-router-dom";
 import { Navigate } from "react-router";
@@ -13,8 +12,7 @@ const Register = ({ setUserDataStatus }) => {
   const [userName, setUserName] = useState();
 
   const userData = useUser();
-  useChangelocationServer();
-
+ 
   const createUser = useCreateUser;
 
   return (
@@ -52,7 +50,7 @@ const Register = ({ setUserDataStatus }) => {
 
           <button
             className="sesionBtn"
-            onClick={() => createUser(userName, email, password, passwordConf)}
+            onClick={(e) => createUser(e,userName, email, password, passwordConf)}
           >
             Registrarse
           </button>
