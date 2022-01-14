@@ -1,0 +1,29 @@
+.course-info a:hover {
+    color: #fff;
+}
+
+.to-the-course {
+    text-decoration: none;
+    padding: 7px;
+    border: solid rgb(0, 37, 107);
+    background-color: rgb(0, 37, 107);
+    border-radius: 10px;
+    color: #fff;
+}
+
+.description-course {
+    width: 50%;
+    margin: auto;
+}
+
+
+@media (max-width: 768px) {
+    .course-about-logo {
+        width: 40%;
+    }
+
+    .description-course {
+        width: 100%;
+        text-align: justify;
+    }
+}
