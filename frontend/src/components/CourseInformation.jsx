@@ -13,7 +13,7 @@ const CourseInformation = () => {
 
   useEffect(() => {
     getCourse(url, course, setDataCourses);
-  }, []);
+  }, [course, getCourse]);
 
   console.log(dataCourses);
   return (
@@ -22,7 +22,7 @@ const CourseInformation = () => {
       <div className="container">
         {dataCourses !== undefined && Object.keys(dataCourses).length > 0 ? (
           <>
-            <div className="course-info center">
+            <article className="course-info center">
               <div>
                 <img
                   src={dataCourses.logo}
@@ -34,12 +34,15 @@ const CourseInformation = () => {
               <p>Nivel: {dataCourses.level}</p>
 
               <p>Instructor: {dataCourses.instructor}</p>
-              <p className="description-course">{dataCourses.description}.</p>
+              <aside>
+                <p className="description-course">{dataCourses.description}.</p>
+              </aside>
+
               <br />
               <Link className="to-the-course" to={dataCourses.linkC}>
                 Ir al curso
               </Link>
-            </div>
+            </article>
           </>
         ) : (
           <article></article>

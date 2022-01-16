@@ -27,7 +27,7 @@ const RouteInformation = () => {
     <>
       <p>.</p>
       <div className="container">
-        {Object.keys(dataRoute).length > 0 && (
+        {dataRoute !== undefined && Object.keys(dataRoute).length > 0 ? (
           <div>
             <h1 className="center">Ruta : {dataRoute.name}</h1>
             <h6 className="center">
@@ -56,6 +56,8 @@ const RouteInformation = () => {
               </section>
             </div>
           </div>
+        ) : (
+          <section></section>
         )}
       </div>
     </>

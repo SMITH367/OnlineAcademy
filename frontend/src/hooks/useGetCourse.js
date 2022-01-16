@@ -7,7 +7,7 @@ const useGetCourse = async (url, course, setDataCourses) => {
     const getData = new FetchData(url + "/" + course);
     const courses = await getData.FetchDataApiGet();
     console.log(courses);
-    if (courses !== null && courses !== undefined && courses !== false)
+    if (courses[0] !== null && courses[0] !== undefined && courses[0] !== false)
         setDataCourses(courses[0]);
 };
 
