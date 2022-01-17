@@ -12,7 +12,7 @@ const course = new Schema({
     resourses: String,
     logo: String,
     level: String,
-    comentaries: {
+    comments: {
         type: Array,
         default: []
     },

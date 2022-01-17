@@ -162,7 +162,26 @@ router.get('/view/:course', async (req, res) => {
     res.send(courses)
 })
 
+router.post('/comments/:course', verifyToken, (req, res) => {
+    jwt.verify(req.auth, 'secretKey', async (err, data) => {
+        if (err) {
+            res.send("err");
+        } else {
+            const sendComment = await course.updateOne({
+                ident: req.params.course
+            }, {
+                $push: {
+                    comments: {
+                        name: req.body.name,
+                        comment: req.body.comment
+                    }
+                }
+            })
+            res.send(sendComment.acknowledged)
+        }
+    })
 
+})
 
 
 module.exports = router
