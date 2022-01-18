@@ -3,12 +3,14 @@ import { getRoute } from "./services/getRoute";
 import { useGetCourse } from "../hooks/useGetCourse";
 import useUser from "../hooks/useUser";
 import { useSendComment } from "../hooks/useSendComment";
+import { useDeleteComment } from "../hooks/useDeleteComment";
 import ReactPlayer from "react-player";
 import "./styles/viewcourse.css";
 
 const ViewCourse = () => {
   const getCourse = useGetCourse;
   const sendCommentData = useSendComment;
+  const deleteComment = useDeleteComment;
   const [commentSend, setCommentSend] = useState(false);
   const [dataCourses, setDataCourses] = useState({});
   const [comment, setComment] = useState("");
@@ -23,22 +25,18 @@ const ViewCourse = () => {
   }, [course, getCourse, commentSend]);
 
   const sendComment = (e) => {
-    if (comment.length > 1) {
-      sendCommentData(
-        e,
-        userData.name,
-        comment,
-        course,
-        userData.email,
-        setCommentSend,
-        setComment
-      );
+    sendCommentData(
+      e,
+      userData.name,
+      comment,
+      course,
+      userData.email,
+      setCommentSend,
+      setComment
+    );
 
-      refComment.current.value = "";
-      setComment(refComment.current.value);
-    } else {
-      alert("No puedes ingresar campos vacios");
-    }
+    refComment.current.value = "";
+    setComment(refComment.current.value);
   };
 
   return (
@@ -79,11 +77,12 @@ const ViewCourse = () => {
               <section className="comentaries mg-em">
                 <h5 className="center">Comentarios</h5>
                 {userData.name !== null && userData.login === "true" && (
-                  <form className="center">
+                  <form className="center form-send-data">
                     <textarea
                       ref={refComment}
                       type="text"
                       onChange={(e) => setComment(e.target.value)}
+                      placeholder="Escribe un comentario"
                     />
                     <input
                       className="coment-course-submit"
@@ -94,11 +93,28 @@ const ViewCourse = () => {
                 )}
 
                 {dataCourses.comments.map((el, id) => (
-                  <div key={id}>
-                    <p>
-                      {el.name} : {el.comment}
-                    </p>
-                  </div>
+                  <aside className="comments-data" key={id}>
+                    <section className="comments-info">
+                      <label className="comments-username">{el.name}:</label>{" "}
+                      <label className="comment"> {el.comment}</label>
+                      {userData.email === el.email && (
+                        <button
+                          className="button-delete-comment"
+                          onClick={(e) =>
+                            deleteComment(
+                              e,
+                              userData.email,
+                              el.comment,
+                              course,
+                              setCommentSend
+                            )
+                          }
+                        >
+                          borrar
+                        </button>
+                      )}
+                    </section>
+                  </aside>
                 ))}
               </section>
             </article>

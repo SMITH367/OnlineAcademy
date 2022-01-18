@@ -1,5 +1,6 @@
 .course-view-cont {
     margin-top: 50px;
+    max-width: 100%;
 }
 
 .course-view-container {
@@ -29,19 +30,48 @@
 
 }
 
-
 .comentaries {
     width: 30%;
+
 }
 
 .coment-course-submit {
-    border: solid rgb(0, 7, 29);
+    border: solid rgb(0, 26, 52);
     color: #fff;
     background-color: rgb(0, 26, 51);
     border-radius: 10px;
     padding: 2px;
-    margin: 10px;
+    display: block;
+    margin: auto;
 
+}
+
+.comments-data {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    margin-top: 10px;
+
+}
+
+.form-send-data {
+    max-width: 100%;
+    margin-bottom: 30px;
+}
+
+.comment {
+    margin-right: 10px;
+}
+
+.send-comment-form {
+    margin: 0;
+    text-align: center;
+}
+
+
+
+.comments-username {
+    font-weight: bolder;
 }
 
 .mg-em {
@@ -57,14 +87,18 @@
 
     }
 
-
-
     .comentaries {
         width: 100%;
         padding: 0;
+        margin: auto;
+
     }
 
     .logo-view-course {
         width: 10%;
+    }
+
+    .text-area-send-comment {
+        text-align: center;
     }
 }

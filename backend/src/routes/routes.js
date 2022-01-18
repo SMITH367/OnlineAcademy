@@ -173,15 +173,36 @@ router.post('/comments/:course', verifyToken, (req, res) => {
                 $push: {
                     comments: {
                         name: req.body.name,
-                        comment: req.body.comment
+                        comment: req.body.comment,
+                        email: req.body.email
                     }
                 }
             })
             res.send(sendComment.acknowledged)
         }
     })
-
 })
 
+router.delete('/comments/:ident', verifyToken, (req, res) => {
+
+    jwt.verify(req.auth, 'secretKey', async (err, data) => {
+        if (err) {
+            res.send("err");
+        } else {
+            const deleteComment = await course.updateOne({
+                ident: req.params.ident,
+            }, {
+                $pull: {
+                    comments: {
+                        email: req.body.email,
+                        comment: req.body.comment
+                    }
+                }
+            })
+            res.send(deleteComment.acknowledged)
+            console.log(deleteComment)
+        }
+    })
+})
 
 module.exports = router
