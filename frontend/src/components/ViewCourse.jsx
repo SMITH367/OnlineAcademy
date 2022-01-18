@@ -110,7 +110,7 @@ const ViewCourse = () => {
                             )
                           }
                         >
-                          borrar
+                          🗑️ ❌
                         </button>
                       )}
                     </section>

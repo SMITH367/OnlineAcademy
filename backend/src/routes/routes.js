@@ -30,7 +30,6 @@ router.get('/user', async (req, res) => {
 //Creating a new user
 router.post('/user', async (req, res) => {
 
-    console.log(req.body)
     const viewUser = await user.find({
         email: req.body.email
     })
