@@ -19,7 +19,7 @@ class FetchData {
         }
 
     }
-    async FetchDataApi(dataUser, method, token = "") {
+    async FetchDataApi(dataA, method, token = "") {
         try {
             const res = await fetch(this.url, {
                 method: method,
@@ -27,10 +27,9 @@ class FetchData {
                     'Content-Type': 'application/json',
                     authentication: token
                 },
-                body: JSON.stringify(dataUser)
+                body: JSON.stringify(dataA)
             })
             const data = await res.json()
-
             return data
 
         } catch (err) {

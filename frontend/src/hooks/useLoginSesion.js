@@ -33,6 +33,7 @@ const useLoginSesion = async (e, setUserDataStatus, email, password) => {
         localStorage.setItem("login", "true");
         localStorage.setItem("name", dataUser.name);
         localStorage.setItem("email", dataUser.email);
+        localStorage.setItem("token", dataUser.accessToken)
 
         return <Navigate to = {
           "/"

@@ -1,5 +1,5 @@
 const lengthValidation = (data) => {
-    return data !== undefined
+    return data !== undefined && data.length > 0
 }
 
 const emailValidation = (email) => {

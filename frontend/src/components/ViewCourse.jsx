@@ -1,40 +1,53 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { getRoute } from "./services/getRoute";
 import { useGetCourse } from "../hooks/useGetCourse";
 import useUser from "../hooks/useUser";
+import { useSendComment } from "../hooks/useSendComment";
 import ReactPlayer from "react-player";
 import "./styles/viewcourse.css";
 
 const ViewCourse = () => {
   const getCourse = useGetCourse;
+  const sendCommentData = useSendComment;
+  const [commentSend, setCommentSend] = useState(false);
   const [dataCourses, setDataCourses] = useState({});
+  const [comment, setComment] = useState("");
+  const refComment = useRef();
+
   const url = "http://localhost:3000/view";
   const course = getRoute(window.location.href);
   const userData = useUser();
 
   useEffect(() => {
     getCourse(url, course, setDataCourses);
-  }, [course, getCourse]);
+  }, [course, getCourse, commentSend]);
 
-  const coment = [
-    {
-      name: "alex",
-      comentaries: "asdasdas",
-    },
-    {
-      name: "alex",
-      comentaries: "asdasdas",
-    },
-    {
-      name: "alex",
-      comentaries: "asdasdas",
-    },
-  ];
+  const sendComment = (e) => {
+    if (comment.length > 1) {
+      sendCommentData(
+        e,
+        userData.name,
+        comment,
+        course,
+        userData.email,
+        setCommentSend,
+        setComment
+      );
+
+      refComment.current.value = "";
+      setComment(refComment.current.value);
+    } else {
+      alert("No puedes ingresar campos vacios");
+    }
+  };
 
   return (
     <>
       <p>.</p>
-      <div className="container">
+      <div
+        className="course-view-cont"
+        style={{ backgroundColor: "rgb(0, 12, 94)", color: "#fff" }}
+      >
         {dataCourses !== undefined && Object.keys(dataCourses).length > 0 ? (
           <>
             <h1 className="center">Bienvenido {userData.name}</h1>
@@ -46,7 +59,7 @@ const ViewCourse = () => {
                   height="100%"
                   controls
                 />
-                <div className="course-presentation">
+                <div className="course-presentation ">
                   {" "}
                   <img
                     src={dataCourses.logo}
@@ -55,24 +68,35 @@ const ViewCourse = () => {
                   />
                   <h4>Curso de {dataCourses.name}</h4>
                 </div>
-                <p>Instructor: {dataCourses.instructor}</p>
-                <aside>
-                  {" "}
+
+                <aside className="mg-em">
+                  <p>Instructor: {dataCourses.instructor}</p>
                   <h5>Proyecto: </h5>
                   {dataCourses.proyectDescription}
                 </aside>
               </section>
 
-              <section className="comentaries">
+              <section className="comentaries mg-em">
                 <h5 className="center">Comentarios</h5>
-                <form>
-                  <input type="text" />
-                  <input type="submit" />
-                </form>
-                {coment.map((el, id) => (
+                {userData.name !== null && userData.login === "true" && (
+                  <form className="center">
+                    <textarea
+                      ref={refComment}
+                      type="text"
+                      onChange={(e) => setComment(e.target.value)}
+                    />
+                    <input
+                      className="coment-course-submit"
+                      type="submit"
+                      onClick={sendComment}
+                    />
+                  </form>
+                )}
+
+                {dataCourses.comments.map((el, id) => (
                   <div key={id}>
                     <p>
-                      {el.name} : {el.comentaries}
+                      {el.name} : {el.comment}
                     </p>
                   </div>
                 ))}
