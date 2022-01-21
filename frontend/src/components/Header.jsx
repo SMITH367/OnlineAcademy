@@ -57,11 +57,7 @@ const Header = ({ setUserDataStatus }) => {
           </li>
 
           <li className="nav-menu-item">
-            <Link to="/">Nosotros</Link>
-          </li>
-
-          <li className="nav-menu-item">
-            <Link to="/">Contacto</Link>
+            <Link to="/register">Registrate</Link>
           </li>
           {login === "true" ? (
             <li className="nav-menu-item">
