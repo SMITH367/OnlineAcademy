@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 
 app.set('port', process.env.PORT || 3000)
-app.set('address','localhost')
+app.set('address', 'localhost')
 
 //Midelwares
 app.use((req, res, next) => {
@@ -16,9 +16,12 @@ app.use((req, res, next) => {
 
 app.use(express.json())
 
-app.use(require('./routes/routes'))
+app.use(require('./routes/route'))
+app.use(require('./routes/user'))
+app.use(require('./routes/courses'))
+app.use(require('./routes/comments'))
 
 
-app.listen(app.get('port'),()=>{
-    console.log('server in the port ',app.get('port'))
+app.listen(app.get('port'), () => {
+    console.log('server in the port ', app.get('port'))
 })

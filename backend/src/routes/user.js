@@ -1,0 +1,126 @@
+const express = require('express')
+const router = express.Router()
+const user = require('../models/users')
+const jwt = require('jsonwebtoken')
+const verifyToken = require('../Auth/verifyToken')
+const database = require("../database")
+
+
+
+//Getting all users
+router.get('/user', async (req, res) => {
+    const viewUser = await user.find()
+    res.send(viewUser)
+})
+
+// Getting user data
+router.get('/user/:email', async (req, res) => {
+    const viewUser = await user.find({
+        email: req.params.email
+    }, {
+        "password": 0,
+        "_id": 0
+    })
+    res.send(viewUser)
+})
+
+
+//Creating a new user
+router.post('/user', async (req, res) => {
+
+    const viewUser = await user.find({
+        email: req.body.email
+    })
+    if (viewUser.length === 0) {
+
+        const newUser = new user(req.body)
+        await newUser.save()
+        res.json({
+            "added": "true"
+        })
+    } else {
+        res.send({
+            "added": "false"
+        })
+    }
+})
+
+// Updating an username
+
+router.put('/username/:id', verifyToken, (req, res) => {
+
+    jwt.verify(req.auth, 'secretKey', async (err, data) => {
+        if (err) {
+            res.send("err");
+        } else {
+            const newData = {
+                name: req.body.name
+            }
+            const updateUser = await user.updateOne({
+                email: req.params.id
+            }, newData)
+            res.send(updateUser.acknowledged)
+        }
+    })
+})
+
+// updating the password
+
+router.put('/userpassword/:id', verifyToken, (req, res) => {
+    jwt.verify(req.auth, 'secretKey', async (err, data) => {
+        if (err) {
+            res.send("err");
+        } else {
+
+
+            const verify = await user.findOne({
+                email: req.params.id
+            })
+
+            if (verify.password === req.body.password) {
+                const newData = {
+                    password: req.body.newPassword
+                }
+                const updateUser = await user.updateOne({
+                    email: req.params.id
+                }, newData)
+                res.send(updateUser.acknowledged)
+            } else {
+                res.sendStatus(403)
+            }
+
+        }
+    })
+})
+
+
+//Login sistem
+router.post('/login', async (req, res) => {
+
+    const dataUserLogin = req.body
+    const viewUser = await user.find(dataUserLogin)
+
+    if (viewUser.length > 0) {
+        const user = {
+            id: 1
+        }
+        jwt.sign({
+            user
+        }, 'secretKey', (err, token) => {
+
+            if (err) return err
+
+            const dataUser = {
+                name: viewUser[0].name,
+                email: viewUser[0].email,
+                accessToken: token
+            }
+            res.json(dataUser);
+
+        })
+    } else {
+        res.sendStatus(403)
+    }
+
+})
+module.exports = router
