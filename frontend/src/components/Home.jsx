@@ -7,6 +7,10 @@ import { useGetCourse } from "../hooks/useGetCourse";
 import { CourseHome } from "./CourseInfo";
 import "./styles/home.css";
 import heroImg from "./sources/student.png";
+import learn from "./sources/learn.svg";
+import practice from "./sources/practice.svg";
+import search from "./sources/search.svg";
+import techpc from "./sources/techpc.svg";
 
 const Home = () => {
   const dataUser = useUser();
@@ -59,7 +63,7 @@ const Home = () => {
               <img className="hero-img" src={heroImg} alt="" />
             </div>
           </article>
-          <h2>Algunos de nuestros cursos</h2>
+          <h2 className="center">Algunos de nuestros cursos</h2>
           <div className="course-home-cont center">
             <CourseHome courseData={curso1}></CourseHome>
             <CourseHome courseData={curso2}></CourseHome>
@@ -67,24 +71,32 @@ const Home = () => {
             <CourseHome courseData={curso4}></CourseHome>
             <CourseHome courseData={curso5}></CourseHome>
           </div>
-          <h4>
-            Crea tu perfil de Linkedin y busca tu empleo con lo aprendido aqui!
-          </h4>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Error hic
-          nemo minima id quod, suscipit iure tempore neque temporibus soluta
-          quidem sapiente esse earum, aspernatur officiis! Molestias eius
-          tempora libero? Lorem ipsum dolor sit amet consectetur adipisicing
-          elit. Doloremque nobis a beatae natus voluptatibus voluptate
-          perferendis eum reprehenderit? Sapiente ipsa iure cupiditate
-          laudantium, ullam a esse libero minima minus iusto! Lorem ipsum dolor
-          sit amet consectetur adipisicing elit. Quod harum nemo magnam sapiente
-          exercitationem pariatur facere et consectetur mollitia similique
-          recusandae placeat asperiores ex adipisci suscipit in, unde minima
-          dolor! Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Laborum ipsam, ipsa labore quo, mollitia repellendus amet accusantium
-          voluptatibus maxime quas recusandae optio excepturi laboriosam?
-          Cupiditate at aliquam libero quis nulla.
-          <label htmlFor=""></label>
+
+          <h4 className="center">¿Como aprender?</h4>
+          <article className="metogology center">
+            <aside className="metogology-tip">
+              <img src={learn} alt="" />
+              <p>Mira los cursos</p>
+            </aside>
+            <aside className="metogology-tip">
+              <img src={search} alt="" />
+              <p>Experimenta y practica</p>
+            </aside>
+            <aside className="metogology-tip">
+              <img src={practice} alt="" />
+              <p>Crea proyectos con lo aprendido</p>
+            </aside>
+          </article>
+
+          <article>
+            <aside className="aside-call-to-act center">
+              <img src={techpc} alt="" />
+              <p>
+                Aprende todo lo que necesitas y se un profesional 4.0 con una
+                educacion online efectiva y gratuita.
+              </p>
+            </aside>
+          </article>
         </section>
         <Footer></Footer>
       </div>

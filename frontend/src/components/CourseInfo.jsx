@@ -5,8 +5,8 @@ const CourseHome = ({ courseData }) => {
     <>
       {courseData.url_course !== undefined ? (
         <Link to={courseData.url_course} className="course-data-home">
-          <p>{courseData.name}</p>
           <img src={courseData.logo} alt="" />
+          <p>{courseData.name}</p>
         </Link>
       ) : (
         <></>
