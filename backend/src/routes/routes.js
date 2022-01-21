@@ -153,6 +153,7 @@ router.get('/courses', async (req, res) => {
     res.send(courses)
 })
 
+//Searching a course
 router.get('/courses/:course', async (req, res) => {
 
     const nameToS = req.params.course
@@ -172,6 +173,7 @@ router.get('/courses/:course', async (req, res) => {
     res.send(courses)
 })
 
+//Getting description data about the course
 router.get('/course/:course', async (req, res) => {
     const courses = await course.find({
         ident: req.params.course
@@ -183,6 +185,7 @@ router.get('/course/:course', async (req, res) => {
     res.send(courses)
 })
 
+//Getting all data of the course
 router.get('/view/:course', async (req, res) => {
     const courses = await course.find({
         ident: req.params.course
@@ -190,6 +193,7 @@ router.get('/view/:course', async (req, res) => {
     res.send(courses)
 })
 
+// Creating a new comment about a course
 router.post('/comments/:course', verifyToken, (req, res) => {
     jwt.verify(req.auth, 'secretKey', async (err, data) => {
         if (err) {
@@ -211,6 +215,7 @@ router.post('/comments/:course', verifyToken, (req, res) => {
     })
 })
 
+//Deleting a comment
 router.delete('/comments/:ident', verifyToken, (req, res) => {
 
     jwt.verify(req.auth, 'secretKey', async (err, data) => {
