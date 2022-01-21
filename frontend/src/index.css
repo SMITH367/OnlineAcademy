@@ -14,6 +14,15 @@ body {
 
 }
 
+.btn-typical {
+  padding: 4px;
+  border: none;
+  margin: 10px;
+  color: azure;
+  background-color: rgb(0, 37, 107);
+  border: solid rgb(0, 37, 107);
+  border-radius: 10px;
+}
 
 .center {
   text-align: center;

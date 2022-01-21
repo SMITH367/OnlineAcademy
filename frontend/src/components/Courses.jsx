@@ -41,14 +41,14 @@ const Courses = () => {
             placeholder="Busca tu curso aqui"
             onChange={(e) => setCourseSearch(e.target.value)}
           />
-          <input
+          <button
             type="button"
-            value="Buscar"
-            className="btn-courses"
+            className="btn-typical"
             onClick={(e) => SearchCourse(e, courseSearch.toUpperCase())}
-          />
-
-          <button className="btn-courses" onClick={defRefresh}>
+          >
+            Buscar
+          </button>
+          <button className="btn-typical" onClick={defRefresh}>
             Ver todos
           </button>
         </form>

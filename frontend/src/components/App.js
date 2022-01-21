@@ -8,6 +8,7 @@ import { RoutesOfLearn } from "./RoutesOfLearn";
 import { RouteInformation } from "./RouteInformation";
 import { Courses } from "./Courses";
 import { ViewCourse } from "./ViewCourse";
+import { Profile } from "./Profile";
 import { CourseInformation } from "./CourseInformation";
 import { Usercontext } from "../context/UserContext";
 
@@ -43,6 +44,7 @@ const App = () => {
           />{" "}
           <Route path="/courses" element={<Courses> </Courses>} />{" "}
           <Route path="/view/:course" element={<ViewCourse> </ViewCourse>} />{" "}
+          <Route path="/profile" element={<Profile> </Profile>} />{" "}
         </Routes>{" "}
       </HashRouter>{" "}
     </Usercontext.Provider>
