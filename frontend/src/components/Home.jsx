@@ -96,6 +96,9 @@ const Home = () => {
                 educacion online efectiva y gratuita.
               </p>
             </aside>
+            <p className="h2 p-4 center">
+              ¿Que esperas? ¡Ve a nuestros cursos ya!
+            </p>
           </article>
         </section>
         <Footer></Footer>
