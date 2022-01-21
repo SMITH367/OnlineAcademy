@@ -1,9 +1,21 @@
+.profile {
+    margin-top: 60px;
+}
+
 .user-data-cont {
-    width: 50%;
+    width: 60%;
     margin: auto;
 }
 
 .user-data-img {
-    width: 30%;
-    margin: auto;
+    width: 20%;
+
+}
+
+
+
+.profile input {
+    border: solid .1px;
+    padding: 4px;
+    margin: 5px;
 }

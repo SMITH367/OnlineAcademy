@@ -44,7 +44,11 @@ const App = () => {
           />{" "}
           <Route path="/courses" element={<Courses> </Courses>} />{" "}
           <Route path="/view/:course" element={<ViewCourse> </ViewCourse>} />{" "}
-          <Route path="/profile" element={<Profile> </Profile>} />{" "}
+          <Route
+            path="/profile"
+            element={<Profile> </Profile>}
+            setUserDataStatus={setUserDataStatus}
+          />{" "}
         </Routes>{" "}
       </HashRouter>{" "}
     </Usercontext.Provider>

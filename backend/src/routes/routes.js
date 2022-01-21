@@ -22,10 +22,22 @@ const verifyToken = (req, res, next) => {
 
 
 //Getting all users
-router.get('/user', async (req, res) => {
-    const viewUser = await user.find()
+// router.get('/user', async (req, res) => {
+//     const viewUser = await user.find()
+//     res.send(viewUser)
+// })
+
+// Getting user data
+router.get('/user/:email', async (req, res) => {
+    const viewUser = await user.find({
+        email: req.params.email
+    }, {
+        "password": 0,
+        "_id": 0
+    })
     res.send(viewUser)
 })
+
 
 //Creating a new user
 router.post('/user', async (req, res) => {
