@@ -9,7 +9,7 @@ const Footer = () => {
         Autor: Brayan Puentes sigueme en{" "}
         <a
           style={{ fontWeight: "bold" }}
-          href="https://google.com"
+          href="https://www.linkedin.com/in/brayan-puentes-ruiz-084018192/"
           target="_blank"
           rel="noreferrer"
         >

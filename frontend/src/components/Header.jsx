@@ -1,29 +1,18 @@
 import React, { useRef } from "react";
 import useUser from "../hooks/useUser";
 import { Link } from "react-router-dom";
+import { useCloseSesion } from "../hooks/useCloseSesion";
 import "./styles/header.css";
 import icon from "./sources/icon.png";
 
 const Header = ({ setUserDataStatus }) => {
   const toogle = useRef();
   const { login } = useUser();
+  const closeSesion = useCloseSesion;
 
   const toogleHeader = () =>
     toogle.current.classList.toggle("nav-phone-visible");
   const handleMenu = () => toogle.current.classList.toggle("nav-phone-visible");
-
-  const closeSesion = () => {
-    setUserDataStatus({
-      login: false,
-      name: null,
-      email: null,
-    });
-    localStorage.removeItem("login");
-
-    localStorage.removeItem("name");
-
-    localStorage.removeItem("email");
-  };
 
   return (
     <header className="header">
@@ -64,7 +53,10 @@ const Header = ({ setUserDataStatus }) => {
 
           {login === "true" ? (
             <li className="nav-menu-item">
-              <button className="btn-sesion red" onClick={closeSesion}>
+              <button
+                className="btn-sesion red"
+                onClick={(e) => closeSesion(setUserDataStatus)}
+              >
                 Cerrar sesion
               </button>
             </li>

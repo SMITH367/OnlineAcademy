@@ -35,12 +35,11 @@ const Profile = () => {
             <div className="change-user p-2 center">
               <h4>Cambiar nombre</h4>
               <form>
-                <label htmlFor="name">Ingresa tu nuevo nombre: </label>
-                <b></b>
                 <input
                   type="text"
                   id="name"
                   onChange={(e) => setName(e.target.value)}
+                  placeholder="Nuevo nombre"
                 />
                 <input
                   type="submit"

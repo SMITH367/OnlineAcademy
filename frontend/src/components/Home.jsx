@@ -92,8 +92,8 @@ const Home = () => {
             <aside className="aside-call-to-act center">
               <img src={techpc} alt="" />
               <p>
-                Aprende todo lo que necesitas y se un profesional 4.0 con una
-                educacion online efectiva y gratuita.
+                Aprende e impulsa tus conocimientos y se un profesional 4.0 con
+                una educacion online efectiva y gratuita.
               </p>
             </aside>
             <p className="h2 p-4 center">
