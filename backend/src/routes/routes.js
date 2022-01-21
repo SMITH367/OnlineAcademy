@@ -47,15 +47,44 @@ router.post('/user', async (req, res) => {
     }
 })
 
-router.put('/user/:id', async (req, res) => {
-    const nameToEdit = req.params.id
-    const newData = req.body
-    await user.updateOne({
-        nombre: nameToEdit
-    }, newData)
-    res.send("updated")
+// Updating an username
 
+router.put('/username/:id', verifyToken, (req, res) => {
+
+    jwt.verify(req.auth, 'secretKey', async (err, data) => {
+        if (err) {
+            res.send("err");
+        } else {
+            const newData = {
+                name: req.body.name
+            }
+            const updateUser = await user.updateOne({
+                email: req.params.id
+            }, newData)
+            res.send(updateUser.acknowledged)
+        }
+    })
 })
+
+// updating the password
+
+router.put('/userpassword/:id', verifyToken, (req, res) => {
+    jwt.verify(req.auth, 'secretKey', async (err, data) => {
+        if (err) {
+            res.send("err");
+        } else {
+            const newData = {
+                password: req.body.password
+            }
+            const updateUser = await user.updateOne({
+                email: req.params.id
+            }, newData)
+            res.send(updateUser.acknowledged)
+        }
+    })
+})
+
+//Delete account
 
 router.delete('/user/:id', async (req, res) => {
     const nameToDel = req.params.id
@@ -199,7 +228,7 @@ router.delete('/comments/:ident', verifyToken, (req, res) => {
                 }
             })
             res.send(deleteComment.acknowledged)
-            console.log(deleteComment)
+
         }
     })
 })
