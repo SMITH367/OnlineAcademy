@@ -48,7 +48,7 @@ const ViewCourse = () => {
       >
         {dataCourses !== undefined && Object.keys(dataCourses).length > 0 ? (
           <>
-            <h1 className="center">Bienvenido {userData.name}</h1>
+            <h1 className="center">Bienvenido {userData.name} </h1>
             <article className="course-view-container">
               <section className="course-player">
                 <ReactPlayer
@@ -58,7 +58,6 @@ const ViewCourse = () => {
                   controls
                 />
                 <div className="course-presentation ">
-                  {" "}
                   <img
                     src={dataCourses.logo}
                     alt=""
@@ -95,8 +94,18 @@ const ViewCourse = () => {
                 {dataCourses.comments.map((el, id) => (
                   <aside className="comments-data" key={id}>
                     <section className="comments-info">
-                      <label className="comments-username">{el.name}:</label>{" "}
-                      <label className="comment"> {el.comment}</label>
+                      <>
+                        {userData.email === el.email ? (
+                          <label className="comments-username">
+                            {userData.name}:
+                          </label>
+                        ) : (
+                          <label className="comments-username">
+                            {el.name}:
+                          </label>
+                        )}
+                      </>
+                      <label className="comment">{el.comment}</label>
                       {userData.email === el.email && (
                         <button
                           className="button-delete-comment"

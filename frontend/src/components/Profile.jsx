@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import useUser from "../hooks/useUser";
-import { useChangeName } from "../hooks/useChangeDataUser";
+import { useChangeName, useChangePassword } from "../hooks/useChangeDataUser";
 import { Navigate } from "react-router";
 import userlogo from "./sources/userlogo.png";
 import { Footer } from "./Footer";
@@ -9,14 +9,16 @@ import "./styles/profile.css";
 const Profile = () => {
   const userData = useUser();
   const changeName = useChangeName;
+  const changePassword = useChangePassword;
   const urlChangeName = "http://localhost:3000/username/";
+  const urlChangePassword = "http://localhost:3000/userpassword/";
   const token = localStorage.getItem("token");
 
   useEffect(() => {}, [userData]);
 
-  const [name, setName] = useState(null);
-  const [password, setPassword] = useState(null);
-  const [passwordConf, setPasswordConf] = useState(null);
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
+  const [passwordNew, setPasswordNew] = useState("");
 
   return (
     <>
@@ -56,9 +58,31 @@ const Profile = () => {
               <h4>Cambiar contraseña</h4>
 
               <form>
-                <input type="text" placeholder="Contraseña actual" />
-                <input type="text" placeholder="Contraseña nueva" />
-                <input type="submit" className="btn-typical" value="Cambiar" />
+                <input
+                  type="password"
+                  placeholder="Contraseña actual"
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <input
+                  type="password"
+                  placeholder="Contraseña nueva"
+                  onChange={(e) => setPasswordNew(e.target.value)}
+                />
+                <input
+                  type="submit"
+                  className="btn-typical"
+                  value="Cambiar"
+                  onClick={(e) => {
+                    changePassword(
+                      e,
+                      urlChangePassword,
+                      password,
+                      passwordNew,
+                      userData.email,
+                      token
+                    );
+                  }}
+                />
               </form>
             </div>
           </section>
