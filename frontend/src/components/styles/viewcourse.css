@@ -16,10 +16,12 @@
 
 .logo-view-course {
     width: 7%;
+    padding: 5px;
+
 }
 
 .course-presentation {
-    margin: 20px;
+    margin: 10px;
     display: flex;
     align-items: center;
 }
@@ -49,6 +51,7 @@
 .comments-data {
     display: flex;
     align-items: center;
+    justify-content: first baseline;
     justify-items: center;
     margin: 10px;
 
@@ -102,7 +105,7 @@
     }
 
     .logo-view-course {
-        width: 10%;
+        width: 15%;
     }
 
     .form-send-data {

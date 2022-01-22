@@ -57,7 +57,7 @@ const ViewCourse = () => {
                   height="100%"
                   controls
                 />
-                <div className="course-presentation ">
+                <div className="course-presentation">
                   <img
                     src={dataCourses.logo}
                     alt=""
@@ -101,7 +101,7 @@ const ViewCourse = () => {
                           </label>
                         ) : (
                           <label className="comments-username">
-                            {el.name}:
+                            {el.name} :
                           </label>
                         )}
                       </>
