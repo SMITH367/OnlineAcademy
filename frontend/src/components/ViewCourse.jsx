@@ -69,7 +69,19 @@ const ViewCourse = () => {
                 <aside className="mg-em">
                   <p>Instructor: {dataCourses.instructor}</p>
                   <h5>Proyecto: </h5>
-                  {dataCourses.proyectDescription}
+                  <p>{dataCourses.proyectDescription}</p>
+
+                  <p>
+                    Mira la documentacion:
+                    <a
+                      className="view-resourses"
+                      target="_blank"
+                      rel="noreferrer"
+                      href={dataCourses.resourses}
+                    >
+                      Aqui
+                    </a>
+                  </p>
                 </aside>
               </section>
 

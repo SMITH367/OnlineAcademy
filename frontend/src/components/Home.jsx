@@ -29,7 +29,7 @@ const Home = () => {
     getCourse(url, cursos.css, setCurso2);
     getCourse(url, cursos.js, setCurso3);
     getCourse(url, cursos.react, setCurso4);
-    getCourse(url, cursos.angular, setCurso5);
+    getCourse(url, cursos.mongo, setCurso5);
 
     // eslint-disable-next-line
   }, []);

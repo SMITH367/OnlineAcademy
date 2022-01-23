@@ -42,7 +42,7 @@
     color: #fff;
     background-color: rgb(0, 26, 51);
     border-radius: 10px;
-    padding: 2px;
+    padding: 3px;
     display: block;
     margin: auto;
 
@@ -78,7 +78,20 @@
     text-align: center;
 }
 
+.view-resourses {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    border: solid 1px;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    padding: 2px;
+    margin: 10px;
+}
 
+.view-resourses:hover {
+    color: rgb(3, 0, 0);
+}
 
 .comments-username {
     font-weight: bolder;
@@ -100,7 +113,7 @@
     .comentaries {
         width: 100%;
         padding: 0;
-        margin: auto;
+        margin-top: 3em;
 
     }
 

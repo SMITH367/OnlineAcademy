@@ -1,5 +1,5 @@
  const cursos = {
-     html: "html",
+     mongo: "mongo",
      css: "css",
      js: "js",
      react: "react",
