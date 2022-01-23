@@ -3,6 +3,7 @@ const router = express.Router()
 const user = require('../models/users')
 const jwt = require('jsonwebtoken')
 const verifyToken = require('../Auth/verifyToken')
+const bcryptjs = require('bcryptjs')
 const database = require("../database")
 
 
@@ -33,7 +34,15 @@ router.post('/user', async (req, res) => {
     })
     if (viewUser.length === 0) {
 
-        const newUser = new user(req.body)
+        let passwordHash = await bcryptjs.hash(req.body.password, 8)
+        const userData = {
+            name: req.body.name,
+            password: passwordHash,
+            email: req.body.email
+        }
+        console.log(userData)
+
+        const newUser = new user(userData)
         await newUser.save()
         res.json({
             "added": "true"
@@ -71,8 +80,6 @@ router.put('/userpassword/:id', verifyToken, (req, res) => {
         if (err) {
             res.send("err");
         } else {
-
-
             const verify = await user.findOne({
                 email: req.params.id
             })
@@ -97,10 +104,18 @@ router.put('/userpassword/:id', verifyToken, (req, res) => {
 //Login sistem
 router.post('/login', async (req, res) => {
 
-    const dataUserLogin = req.body
-    const viewUser = await user.find(dataUserLogin)
 
-    if (viewUser.length > 0) {
+    const viewUser = await user.find({
+        email: req.body.email
+    })
+
+
+    const passwordTry = req.body.password
+    const passwordUser = viewUser[0].password
+
+    const passwordValidation = bcryptjs.compareSync(passwordTry, passwordUser)
+
+    if (viewUser.length > 0 && passwordValidation === true) {
         const user = {
             id: 1
         }
