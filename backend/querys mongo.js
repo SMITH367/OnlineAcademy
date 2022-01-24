@@ -30,18 +30,18 @@ db.routes.save({
 
 db.courses.save({
 
-	"name": "HTML",
-	"description": "En este curso aprenderas el lenguaje de marcado y etiquetas que le da esqueleto a la web, entenderas los conceptos necesarios para dominar los simientos del desarrollo web moderno",
-	"instructor": "Soy dalto",
-	"video": "https://www.youtube.com/watch?v=kN1XP-Bef7w&t",
-	"resourses": [],
-	"level": "Basico",
+	"name": "MYSQL",
+	"description": "En este curso aprenderas la base de datos relacional mas usada del mundo, entenderas conceptos de como funciona el lenguaje sql y te enseñaremos a realizar las operaciones fundamentales con esta base de datos",
+	"instructor": "Codigofacilito",
+	"video": "https://www.youtube.com/watch?v=QYGdXagklbA",
+	"resourses": "https://dev.mysql.com/doc/",
+	"level": "Intermedio",
 	"comentaries": [],
-	"logo": "https://static.platzi.com/media/achievements/badges-html-css-afa64acb-64a4-486d-96a5-f930fbb7ee32.png",
-	"linkC": "/view/html",
-	"ident": "html",
-	"url_course": "",
-	"proyect-description": "Para aplicar tus conocimientos, crea un blog sobre un tema que te guste, usando todas las etiquetas html que puedas y de manera semantica",
+	"logo": "https://static.platzi.com/media/achievements/1272-15ff4836-0221-4001-b945-5cf34bd65bab.png",
+	"linkC": "/view/sql",
+	"ident": "sql",
+	"url_course": "/course/sql",
+	"proyectDescription": "Para aplicar tus conocimientos, crea una base de datos nueva, realiza consultas, por ejemplo crea una base de datos para gestionar empleados y sus lugares de trabajo dentro de una empresa x",
 })
 
 db.users.insert({
