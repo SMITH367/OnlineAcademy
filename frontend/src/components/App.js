@@ -8,6 +8,7 @@ import { RoutesOfLearn } from "./RoutesOfLearn";
 import { RouteInformation } from "./RouteInformation";
 import { Courses } from "./Courses";
 import { ViewCourse } from "./ViewCourse";
+import { Forum } from "./Forum";
 import { Profile } from "./Profile";
 import { CourseInformation } from "./CourseInformation";
 import { Usercontext } from "../context/UserContext";
@@ -28,27 +29,28 @@ const App = () => {
           <Route
             path="/login"
             element={<Login setUserDataStatus={setUserDataStatus}> </Login>}
-          />{" "}
+          />
           <Route
             path="/register"
             element={<Register userDataStatus={userDataStatus}> </Register>}
           />
-          <Route path="/routes" element={<RoutesOfLearn> </RoutesOfLearn>} />{" "}
+          <Route path="/routes" element={<RoutesOfLearn> </RoutesOfLearn>} />
           <Route
             path="/route/:route"
             element={<RouteInformation> </RouteInformation>}
-          />{" "}
+          />
           <Route
             path="/course/:course"
             element={<CourseInformation> </CourseInformation>}
-          />{" "}
-          <Route path="/courses" element={<Courses> </Courses>} />{" "}
-          <Route path="/view/:course" element={<ViewCourse> </ViewCourse>} />{" "}
+          />
+          <Route path="/courses" element={<Courses> </Courses>} />
+          <Route path="/view/:course" element={<ViewCourse> </ViewCourse>} />
+          <Route path="/forum" element={<Forum> </Forum>} />
           <Route
             path="/profile"
             element={<Profile> </Profile>}
             setUserDataStatus={setUserDataStatus}
-          />{" "}
+          />
         </Routes>{" "}
       </HashRouter>{" "}
     </Usercontext.Provider>

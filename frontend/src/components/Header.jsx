@@ -45,6 +45,10 @@ const Header = ({ setUserDataStatus }) => {
             <Link to="/courses">Cursos</Link>
           </li>
 
+          <li className="nav-menu-item">
+            <Link to="/forum">Foro</Link>
+          </li>
+
           {login !== "true" && (
             <li className="nav-menu-item">
               <Link to="/register">Registrate</Link>
