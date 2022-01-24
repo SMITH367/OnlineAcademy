@@ -40,7 +40,7 @@ router.post('/user', async (req, res) => {
             password: passwordHash,
             email: req.body.email
         }
-        console.log(userData)
+
 
         const newUser = new user(userData)
         await newUser.save()
@@ -138,4 +138,5 @@ router.post('/login', async (req, res) => {
     }
 
 })
+
 module.exports = router
