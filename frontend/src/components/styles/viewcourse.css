@@ -34,7 +34,10 @@
 
 .comentaries {
     width: 30%;
+}
 
+.comment-send-txt {
+    width: 100%;
 }
 
 .coment-course-submit {
@@ -53,7 +56,7 @@
     align-items: center;
     justify-content: first baseline;
     justify-items: center;
-    margin: 10px;
+    margin: 15px;
 
 }
 
@@ -108,6 +111,10 @@
         height: 30vh;
         margin-bottom: 270px;
 
+    }
+
+    .comment-send-txt {
+        width: 70%;
     }
 
     .comentaries {

@@ -19,7 +19,6 @@ router.get('/comments/all', async (req, res) => {
         "level": 0,
         "proyectDescription": 0,
         "logo": 0,
-        "ident": 0,
         "_id": 0,
         "url_course": 0
 

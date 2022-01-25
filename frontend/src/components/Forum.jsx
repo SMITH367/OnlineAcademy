@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { FetchData } from "./services/fetchData";
+import "./styles/forum.css";
+
 const Forum = () => {
   const url = "http://localhost:3000/comments/all";
   const [dataCourses, setDataCourses] = useState([]);
@@ -19,21 +22,46 @@ const Forum = () => {
       <p>.</p>
       {dataCourses !== undefined && Object.keys(dataCourses).length > 0 ? (
         <article className="container">
-          <section>
-            <h1 className="center">Comunidad de TL Academy</h1>
+          <h1 className="center">Comunidad de TL Academy</h1>
+          <section className="forum-hero center">
+            <div>
+              <h2>
+                Participa el grupos de discusion de nuestro foro, comparte y
+                aprende sobre las habilidades digitales que necesitas
+              </h2>
+            </div>
+            <div>
+              <img
+                src="https://static.platzi.com/static/images/Forum/foro_ilustracion.png"
+                alt=""
+              />
+            </div>
+          </section>
+
+          <section className="forum-section">
+            <h3 className="center">Foro de TL Academy</h3>
             {dataCourses.map((course, id) => (
-              <div key={id}>
+              <div className="forum-data" key={id}>
                 {course.comments.length > 0 && (
                   <>
                     {course.comments.map((el, key) => (
-                      <div key={key}>
+                      <div key={key} className="forum-data-el">
                         {key <= 1 && (
-                          <>
-                            <p>{el.name}</p>
-                            <p>{el.comment}</p>
-                            <p>{course.name}</p>
-                            <p>{key}</p>
-                          </>
+                          <div className="comment-data">
+                            <p>
+                              <label className="user-data-name">
+                                {el.name}:
+                              </label>
+                              <p> {el.comment}</p>
+                              <label>
+                                En el curso de:{" "}
+                                <Link to={`/view/${course.ident}`}>
+                                  {" "}
+                                  {course.name.toLowerCase()}
+                                </Link>
+                              </label>
+                            </p>
+                          </div>
                         )}
                       </div>
                     ))}

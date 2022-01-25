@@ -90,6 +90,7 @@ const ViewCourse = () => {
                 {userData.name !== null && userData.login === "true" && (
                   <form className="center form-send-data">
                     <textarea
+                      className="comment-send-txt"
                       ref={refComment}
                       type="text"
                       onChange={(e) => setComment(e.target.value)}
