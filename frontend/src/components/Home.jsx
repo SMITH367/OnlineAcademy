@@ -64,13 +64,16 @@ const Home = () => {
             </div>
           </article>
           <h2 className="center">Algunos de nuestros cursos</h2>
-          <div className="course-home-cont center">
-            <CourseHome courseData={curso1}></CourseHome>
-            <CourseHome courseData={curso2}></CourseHome>
-            <CourseHome courseData={curso3}></CourseHome>
-            <CourseHome courseData={curso4}></CourseHome>
-            <CourseHome courseData={curso5}></CourseHome>
-          </div>
+
+          {curso1 !== undefined && (
+            <div className="course-home-cont center">
+              <CourseHome courseData={curso1}></CourseHome>
+              <CourseHome courseData={curso2}></CourseHome>
+              <CourseHome courseData={curso3}></CourseHome>
+              <CourseHome courseData={curso4}></CourseHome>
+              <CourseHome courseData={curso5}></CourseHome>
+            </div>
+          )}
 
           <h4 className="center">¿Como aprender?</h4>
           <article className="metogology center">
