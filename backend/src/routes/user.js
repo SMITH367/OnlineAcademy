@@ -86,9 +86,10 @@ router.put('/userpassword/:id', verifyToken, (req, res) => {
 
             const passwordValidation = bcryptjs.compareSync(req.body.password, verify.password)
 
+            let passwordHash = await bcryptjs.hash(req.body.newPassword, 8)
             if (passwordValidation) {
                 const newData = {
-                    password: req.body.newPassword
+                    password: passwordHash
                 }
                 const updateUser = await user.updateOne({
                     email: req.params.id
@@ -111,9 +112,8 @@ router.post('/login', async (req, res) => {
         email: req.body.email
     })
 
-
-    const passwordTry = req.body.password
     const passwordUser = viewUser[0].password
+    const passwordTry = req.body.password
 
     const passwordValidation = bcryptjs.compareSync(passwordTry, passwordUser)
 
