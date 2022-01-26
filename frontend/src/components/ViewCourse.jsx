@@ -16,7 +16,7 @@ const ViewCourse = () => {
   const [comment, setComment] = useState("");
   const refComment = useRef();
 
-  const url = "http://localhost:3000/view";
+  const url = "https://onlineacademyp.herokuapp.com/view";
   const course = getRoute(window.location.href);
   const userData = useUser();
 

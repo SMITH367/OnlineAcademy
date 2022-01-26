@@ -4,7 +4,7 @@ import { FetchData } from "./services/fetchData";
 import "./styles/forum.css";
 
 const Forum = () => {
-  const url = "http://localhost:3000/comments/all";
+  const url = "https://onlineacademyp.herokuapp.com/comments/all";
   const [dataCourses, setDataCourses] = useState([]);
 
   useEffect(() => {

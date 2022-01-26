@@ -4,7 +4,7 @@ import {
 
 
 const refreshUserData = async (email) => {
-    const url = "http://localhost:3000/user/"
+    const url = "https://onlineacademyp.herokuapp.com/user/"
     const getData = new FetchData(url + email);
     const userData = await getData.FetchDataApiGet();
     localStorage.setItem("name", userData[0].name)

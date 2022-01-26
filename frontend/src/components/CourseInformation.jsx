@@ -7,7 +7,7 @@ import "./styles/courseinfo.css";
 const CourseInformation = () => {
   const [dataCourses, setDataCourses] = useState({});
   const getCourse = useGetCourse;
-  const url = "http://localhost:3000/course";
+  const url = "https://onlineacademyp.herokuapp.com/course";
   const course = getRoute(window.location.href);
   console.log(course);
 

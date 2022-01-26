@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const RoutesOfLearn = () => {
   const [dataRoute, setDataRoute] = useState([]);
-  const url = "http://localhost:3000/routes";
+  const url = "https://onlineacademyp.herokuapp.com/routes";
 
   useEffect(() => {
     const fetch = async () => {
