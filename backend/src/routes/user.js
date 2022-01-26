@@ -84,7 +84,9 @@ router.put('/userpassword/:id', verifyToken, (req, res) => {
                 email: req.params.id
             })
 
-            if (verify.password === req.body.password) {
+            const passwordValidation = bcryptjs.compareSync(req.body.password, verify.password)
+
+            if (passwordValidation) {
                 const newData = {
                     password: req.body.newPassword
                 }
