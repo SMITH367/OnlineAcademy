@@ -25,10 +25,10 @@ const Forum = () => {
           <h1 className="center">Comunidad de TL Academy</h1>
           <section className="forum-hero center">
             <div>
-              <h2>
+              <h4>
                 Participa el grupos de discusion de nuestro foro, comparte y
                 aprende sobre las habilidades digitales que necesitas
-              </h2>
+              </h4>
             </div>
             <div>
               <img
@@ -39,7 +39,7 @@ const Forum = () => {
           </section>
 
           <section className="forum-section">
-            <h3 className="center">Foro de TL Academy</h3>
+            <h4 className="center">Foro de TL Academy</h4>
             {dataCourses.map((course, id) => (
               <div className="forum-data" key={id}>
                 {course.comments.length > 0 && (
