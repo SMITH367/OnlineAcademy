@@ -13,7 +13,10 @@ const Courses = () => {
     const fetch = async () => {
       const getData = new FetchData(url);
       const courses = await getData.FetchDataApiGet();
-      if (courses !== null && courses !== undefined) setDataCourses(courses);
+      if (courses !== null && courses !== undefined) {
+        courses.sort(() => Math.random() - 0.5);
+        setDataCourses(courses);
+      }
     };
     fetch();
   }, [refesh]);
