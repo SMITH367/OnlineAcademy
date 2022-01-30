@@ -30,18 +30,18 @@ db.routes.save({
 
 db.courses.save({
 
-	"name": "MYSQL",
-	"description": "En este curso aprenderas la base de datos relacional mas usada del mundo, entenderas conceptos de como funciona el lenguaje sql y te enseñaremos a realizar las operaciones fundamentales con esta base de datos",
-	"instructor": "Codigofacilito",
-	"video": "https://www.youtube.com/watch?v=QYGdXagklbA",
-	"resourses": "https://dev.mysql.com/doc/",
-	"level": "Intermedio",
+	"name": "DOCKER",
+	"description": "En este curso aprenderas que es. como funciona, para que sirve la herramienta de despliegue docker y como usarlo en tus proyectos",
+	"instructor": "Pelardo nerd",
+	"video": "https://www.youtube.com/watch?v=CV_Uf3Dq-EU",
+	"resourses": "https://docs.docker.com/reference/",
+	"level": "Avanzado",
 	"comentaries": [],
-	"logo": "https://static.platzi.com/media/achievements/1272-15ff4836-0221-4001-b945-5cf34bd65bab.png",
-	"linkC": "/view/sql",
-	"ident": "sql",
-	"url_course": "/course/sql",
-	"proyectDescription": "Para aplicar tus conocimientos, crea una base de datos nueva, realiza consultas, por ejemplo crea una base de datos para gestionar empleados y sus lugares de trabajo dentro de una empresa x",
+	"logo": "https://static.platzi.com/media/achievements/badges-fundamentos-docker-c1277cec-3ef7-4557-9f83-2649bec9fe70.png",
+	"linkC": "/view/docker",
+	"ident": "docker",
+	"url_course": "/course/docker",
+	"proyectDescription": "Practica con las funcionalidades vistas en el curso e intenta integrar docker a un proyecto que tengas",
 })
 
 db.users.insert({
