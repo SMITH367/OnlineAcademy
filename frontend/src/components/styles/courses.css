@@ -3,7 +3,7 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    margin: 40px auto auto auto;
+    margin: 40px auto 40px auto;
     justify-content: center;
 
 }

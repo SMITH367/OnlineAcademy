@@ -72,7 +72,7 @@ const ViewCourse = () => {
                   <p>{dataCourses.proyectDescription}</p>
 
                   <p>
-                    Mira la documentacion:
+                    Mirar los recursos:
                     <a
                       className="view-resourses"
                       target="_blank"

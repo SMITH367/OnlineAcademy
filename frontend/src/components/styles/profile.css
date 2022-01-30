@@ -19,3 +19,17 @@
     padding: 4px;
     margin: 5px;
 }
+
+.profile-input-text {
+    width: 20%;
+}
+
+
+
+
+@media (max-width:820px) {
+    .profile-input-text {
+        width: 80%;
+    }
+
+}

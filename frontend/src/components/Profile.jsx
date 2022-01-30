@@ -39,6 +39,7 @@ const Profile = () => {
               <h4>Cambiar nombre</h4>
               <form>
                 <input
+                  className="profile-input-text"
                   type="text"
                   id="name"
                   onChange={(e) => setName(e.target.value)}
@@ -61,10 +62,12 @@ const Profile = () => {
               <form>
                 <input
                   type="password"
+                  className="profile-input-text"
                   placeholder="Contraseña actual"
                   onChange={(e) => setPassword(e.target.value)}
                 />
                 <input
+                  className="profile-input-text"
                   type="password"
                   placeholder="Contraseña nueva"
                   onChange={(e) => setPasswordNew(e.target.value)}
