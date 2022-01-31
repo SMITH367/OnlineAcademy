@@ -12,7 +12,6 @@ const Forum = () => {
       const getData = new FetchData(url);
       const courses = await getData.FetchDataApiGet();
       if (courses !== null && courses !== undefined) setDataCourses(courses);
-      console.log("asd");
     };
     fetch();
   }, []);
@@ -25,10 +24,10 @@ const Forum = () => {
           <h1 className="center">Comunidad de TL Academy</h1>
           <section className="forum-hero center">
             <div>
-              <h4>
-                Participa el grupos de discusion de nuestro foro, comparte y
-                aprende sobre las habilidades digitales que necesitas
-              </h4>
+              <p className="h4">
+                Participa en los grupos de discusion de nuestro foro, comparte y
+                aprende sobre las habilidades digitales que necesitas.
+              </p>
             </div>
             <div>
               <img
@@ -48,7 +47,7 @@ const Forum = () => {
                       <div key={key} className="forum-data-el">
                         {key <= 1 && (
                           <div className="comment-data">
-                            <p>
+                            <div>
                               <label className="user-data-name">
                                 {el.name}:
                               </label>
@@ -60,7 +59,7 @@ const Forum = () => {
                                   {course.name.toLowerCase()}
                                 </Link>
                               </label>
-                            </p>
+                            </div>
                           </div>
                         )}
                       </div>

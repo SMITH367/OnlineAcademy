@@ -1,7 +1,8 @@
  const cursos = {
      mongo: "mongo",
-     css: "css",
+     git: "git",
      js: "js",
+     node: "node",
      react: "react",
      angular: "angular",
  };

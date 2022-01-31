@@ -19,17 +19,19 @@ const Home = () => {
   const [curso3, setCurso3] = useState([]);
   const [curso4, setCurso4] = useState([]);
   const [curso5, setCurso5] = useState([]);
+  const [curso6, setCurso6] = useState([]);
 
   const url = "https://onlineacademyp.herokuapp.com/course";
 
   const getCourse = useGetCourse;
 
   useEffect(() => {
-    getCourse(url, cursos.html, setCurso1);
-    getCourse(url, cursos.css, setCurso2);
-    getCourse(url, cursos.js, setCurso3);
+    getCourse(url, cursos.js, setCurso1);
+    getCourse(url, cursos.node, setCurso2);
+    getCourse(url, cursos.git, setCurso3);
     getCourse(url, cursos.react, setCurso4);
     getCourse(url, cursos.mongo, setCurso5);
+    getCourse(url, cursos.angular, setCurso6);
 
     // eslint-disable-next-line
   }, []);
@@ -48,7 +50,7 @@ const Home = () => {
               </p>
               <p>
                 Hola, {dataUser.name} estudia con nosotros y adquiere las
-                habilidades profesionales que necesitas para triunfar en la
+                habilidades profesionales necesarias para triunfar en la
                 industria tech.
               </p>
               <Link to="/courses" className="call-action">
@@ -72,6 +74,7 @@ const Home = () => {
               <CourseHome courseData={curso3}></CourseHome>
               <CourseHome courseData={curso4}></CourseHome>
               <CourseHome courseData={curso5}></CourseHome>
+              <CourseHome courseData={curso6}></CourseHome>
             </div>
           )}
 

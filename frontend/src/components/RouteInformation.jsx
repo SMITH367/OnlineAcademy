@@ -22,7 +22,6 @@ const RouteInformation = () => {
     fetch();
   }, [url]);
 
-  console.log(dataRoute);
   return (
     <>
       <p>.</p>

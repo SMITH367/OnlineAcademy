@@ -9,13 +9,11 @@ const CourseInformation = () => {
   const getCourse = useGetCourse;
   const url = "https://onlineacademyp.herokuapp.com/course";
   const course = getRoute(window.location.href);
-  console.log(course);
 
   useEffect(() => {
     getCourse(url, course, setDataCourses);
   }, [course, getCourse]);
 
-  console.log(dataCourses);
   return (
     <>
       <p>.</p>
