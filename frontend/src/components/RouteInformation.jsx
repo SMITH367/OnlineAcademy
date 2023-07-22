@@ -9,7 +9,7 @@ const RouteInformation = () => {
   const toget = getRoute(window.location.href);
 
   const [dataRoute, setDataRoute] = useState([]);
-  const url = `https://onlineacademyp.herokuapp.com/route/${toget}`;
+  const url = `http://localhost:3000/route/${toget}`;
 
   const user = useUser();
 

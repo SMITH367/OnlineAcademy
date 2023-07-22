@@ -10,9 +10,9 @@ const Profile = () => {
   const userData = useUser();
   const changeName = useChangeName;
   const changePassword = useChangePassword;
-  const urlChangeName = "https://onlineacademyp.herokuapp.com/username/";
+  const urlChangeName = "http://localhost:3000/username/";
   const urlChangePassword =
-    "https://onlineacademyp.herokuapp.com/userpassword/";
+    "http://localhost:3000/userpassword/";
   const token = localStorage.getItem("token");
 
   useEffect(() => {}, [userData]);

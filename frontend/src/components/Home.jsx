@@ -21,7 +21,7 @@ const Home = () => {
   const [curso5, setCurso5] = useState([]);
   const [curso6, setCurso6] = useState([]);
 
-  const url = "https://onlineacademyp.herokuapp.com/course";
+  const url = "http://localhost:3000/course";
 
   const getCourse = useGetCourse;
 

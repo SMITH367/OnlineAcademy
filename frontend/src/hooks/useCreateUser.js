@@ -17,7 +17,7 @@ const useCreateUser = async (e, userName, email, password, passwordConf) => {
   ) {
     if (emailValidation(email) === true) {
       if (passwordConf === password && password.length > 5) {
-        const url = "https://onlineacademyp.herokuapp.com/user"
+        const url = "http://localhost:3000/user"
         const fetch = new FetchData(url);
 
         const dataUser = await fetch.FetchDataApi({

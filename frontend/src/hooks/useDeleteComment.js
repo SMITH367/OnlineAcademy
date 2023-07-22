@@ -12,7 +12,7 @@ const useDeleteComment = async (e, email, comment, course, setCommentSend) => {
     const token = localStorage.getItem("token")
 
 
-    const url = "https://onlineacademyp.herokuapp.com/comments/" + course
+    const url = "http://localhost:3000/comments/" + course
     const fetch = new FetchData(url);
 
 

@@ -7,7 +7,7 @@ const Courses = () => {
   const [dataCourses, setDataCourses] = useState([]);
   const [refesh, setRefesh] = useState(false);
   const [courseSearch, setCourseSearch] = useState("");
-  const url = "https://onlineacademyp.herokuapp.com/courses";
+  const url = "http://localhost:3000/courses";
 
   useEffect(() => {
     const fetch = async () => {
