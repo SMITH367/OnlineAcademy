@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FetchData } from "./services/fetchData";
 import "./styles/forum.css";
-
+import { getBACKENDurl } from "../components/services/getBACKENDurl";
 const Forum = () => {
-  const url = "http://localhost:3000/comments/all";
+  const url = `${getBACKENDurl}/comments/all`;
   const [dataCourses, setDataCourses] = useState([]);
 
   useEffect(() => {
@@ -14,7 +14,7 @@ const Forum = () => {
       if (courses !== null && courses !== undefined) setDataCourses(courses);
     };
     fetch();
-  }, []);
+  }, [url]);
 
   return (
     <>

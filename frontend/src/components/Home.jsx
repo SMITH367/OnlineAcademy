@@ -11,6 +11,7 @@ import learn from "./sources/learn.svg";
 import practice from "./sources/practice.svg";
 import search from "./sources/search.svg";
 import techpc from "./sources/techpc.svg";
+import { getBACKENDurl } from "../components/services/getBACKENDurl";
 
 const Home = () => {
   const dataUser = useUser();
@@ -21,7 +22,7 @@ const Home = () => {
   const [curso5, setCurso5] = useState([]);
   const [curso6, setCurso6] = useState([]);
 
-  const url = "http://localhost:3000/course";
+  const url = `${getBACKENDurl}/course`;
 
   const getCourse = useGetCourse;
 

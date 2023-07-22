@@ -67,7 +67,7 @@ const Header = ({ setUserDataStatus }) => {
           ) : (
             <li className="nav-menu-item">
               <Link to="/login" className="btn-sesion-login btn-sesion green">
-                Inicia sesion
+                Iniciar sesion
               </Link>
             </li>
           )}

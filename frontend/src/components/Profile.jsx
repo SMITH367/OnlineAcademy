@@ -4,15 +4,16 @@ import { useChangeName, useChangePassword } from "../hooks/useChangeDataUser";
 import { Navigate } from "react-router";
 import userlogo from "./sources/userlogo.png";
 import { Footer } from "./Footer";
+import { getBACKENDurl } from "../components/services/getBACKENDurl";
 import "./styles/profile.css";
 
 const Profile = () => {
   const userData = useUser();
   const changeName = useChangeName;
   const changePassword = useChangePassword;
-  const urlChangeName = "http://localhost:3000/username/";
+  const urlChangeName = `${getBACKENDurl}/username/`;
   const urlChangePassword =
-    "http://localhost:3000/userpassword/";
+    `${getBACKENDurl}/userpassword/`;
   const token = localStorage.getItem("token");
 
   useEffect(() => {}, [userData]);

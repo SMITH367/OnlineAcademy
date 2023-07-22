@@ -5,6 +5,7 @@ import useUser from "../hooks/useUser";
 import { useSendComment } from "../hooks/useSendComment";
 import { useDeleteComment } from "../hooks/useDeleteComment";
 import ReactPlayer from "react-player";
+import { getBACKENDurl } from "../components/services/getBACKENDurl";
 import "./styles/viewcourse.css";
 
 const ViewCourse = () => {
@@ -16,13 +17,13 @@ const ViewCourse = () => {
   const [comment, setComment] = useState("");
   const refComment = useRef();
 
-  const url = "http://localhost:3000/view";
+  const url = `${getBACKENDurl}/view`;
   const course = getRoute(window.location.href);
   const userData = useUser();
 
   useEffect(() => {
     getCourse(url, course, setDataCourses);
-  }, [course, getCourse, commentSend]);
+  }, [course, getCourse, commentSend, url]);
 
   const sendComment = (e) => {
     sendCommentData(

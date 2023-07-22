@@ -3,16 +3,17 @@ import { getRoute } from "./services/getRoute";
 import { useGetCourse } from "../hooks/useGetCourse";
 import { Link } from "react-router-dom";
 import "./styles/courseinfo.css";
+import { getBACKENDurl } from "../components/services/getBACKENDurl";
 
 const CourseInformation = () => {
   const [dataCourses, setDataCourses] = useState({});
   const getCourse = useGetCourse;
-  const url = "http://localhost:3000/course";
+  const url = `${getBACKENDurl}/course`;
   const course = getRoute(window.location.href);
 
   useEffect(() => {
     getCourse(url, course, setDataCourses);
-  }, [course, getCourse]);
+  }, [course, getCourse, url]);
 
   return (
     <>

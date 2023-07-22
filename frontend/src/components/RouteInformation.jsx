@@ -3,13 +3,14 @@ import { FetchData } from "./services/fetchData";
 import useUser from "../hooks/useUser";
 import { getRoute } from "./services/getRoute";
 import { Link } from "react-router-dom";
+import { getBACKENDurl } from "../components/services/getBACKENDurl";
 import "./styles/routeInformation.css";
 
 const RouteInformation = () => {
   const toget = getRoute(window.location.href);
 
   const [dataRoute, setDataRoute] = useState([]);
-  const url = `http://localhost:3000/route/${toget}`;
+  const url = `${getBACKENDurl}/route/${toget}`;
 
   const user = useUser();
 

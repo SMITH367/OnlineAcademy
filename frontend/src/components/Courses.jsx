@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import { FetchData } from "./services/fetchData";
 import { Link } from "react-router-dom";
 import "./styles/courses.css";
-
+import { getBACKENDurl } from "../components/services/getBACKENDurl";
 const Courses = () => {
   const [dataCourses, setDataCourses] = useState([]);
   const [refesh, setRefesh] = useState(false);
   const [courseSearch, setCourseSearch] = useState("");
-  const url = "http://localhost:3000/courses";
+  const url = `${getBACKENDurl}/courses`;
 
   useEffect(() => {
     const fetch = async () => {
@@ -19,7 +19,7 @@ const Courses = () => {
       }
     };
     fetch();
-  }, [refesh]);
+  }, [refesh, url]);
 
   const SearchCourse = async (e, course) => {
     e.preventDefault();

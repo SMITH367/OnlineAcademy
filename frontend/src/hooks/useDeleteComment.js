@@ -1,7 +1,7 @@
 import {
     FetchData
 } from "../components/services/fetchData";
-
+import { getBACKENDurl } from "../components/services/getBACKENDurl";
 
 
 const useDeleteComment = async (e, email, comment, course, setCommentSend) => {
@@ -12,7 +12,7 @@ const useDeleteComment = async (e, email, comment, course, setCommentSend) => {
     const token = localStorage.getItem("token")
 
 
-    const url = "http://localhost:3000/comments/" + course
+    const url = `${getBACKENDurl}/comments/` + course
     const fetch = new FetchData(url);
 
 

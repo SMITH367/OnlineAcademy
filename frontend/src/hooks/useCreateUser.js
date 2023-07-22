@@ -5,7 +5,7 @@ import {
   lengthValidation,
   emailValidation,
 } from "../components/services/validations";
-
+import { getBACKENDurl } from "../components/services/getBACKENDurl";
 const useCreateUser = async (e, userName, email, password, passwordConf) => {
 
   e.preventDefault()
@@ -17,7 +17,7 @@ const useCreateUser = async (e, userName, email, password, passwordConf) => {
   ) {
     if (emailValidation(email) === true) {
       if (passwordConf === password && password.length > 5) {
-        const url = "http://localhost:3000/user"
+        const url = `${getBACKENDurl}/user`
         const fetch = new FetchData(url);
 
         const dataUser = await fetch.FetchDataApi({

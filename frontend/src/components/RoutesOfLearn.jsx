@@ -2,10 +2,10 @@ import React, { useEffect, useState } from "react";
 import { FetchData } from "./services/fetchData";
 import "./styles/routes.css";
 import { Link } from "react-router-dom";
-
+import { getBACKENDurl } from "../components/services/getBACKENDurl";
 const RoutesOfLearn = () => {
   const [dataRoute, setDataRoute] = useState([]);
-  const url = "http://localhost:3000/routes";
+  const url = `${getBACKENDurl}/routes`;
 
   useEffect(() => {
     const fetch = async () => {
@@ -14,7 +14,7 @@ const RoutesOfLearn = () => {
       if (routes !== null && routes !== undefined) setDataRoute(routes);
     };
     fetch();
-  }, []);
+  }, [url]);
 
   return (
     <>

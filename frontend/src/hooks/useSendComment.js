@@ -5,13 +5,14 @@ import {
 import {
     lengthValidation
 } from "../components/services/validations"
+import { getBACKENDurl } from "../components/services/getBACKENDurl";
 const useSendComment = async (e, name, comment, course, email, setCommentSend) => {
 
     e.preventDefault()
     const token = localStorage.getItem("token")
 
 
-    const url = "http://localhost:3000/comments/" + course
+    const url = `${getBACKENDurl}/comments/` + course
     const fetch = new FetchData(url);
 
     if (lengthValidation(comment)) {
