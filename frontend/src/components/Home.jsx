@@ -66,9 +66,10 @@ const Home = () => {
               <img className="hero-img" src={heroImg} alt="" />
             </div>
           </article>
+
           <h2 className="center">Algunos de nuestros cursos</h2>
 
-          {curso1 !== undefined && (
+          {curso1 !== null && (
             <div className="course-home-cont center">
               <CourseHome courseData={curso1}></CourseHome>
               <CourseHome courseData={curso2}></CourseHome>
@@ -78,8 +79,7 @@ const Home = () => {
               <CourseHome courseData={curso6}></CourseHome>
             </div>
           )}
-
-          <h4 className="center">¿Como aprender?</h4>
+          <h2 className="center">¿Como aprovechar nuestra academia?</h2>
           <article className="metogology center">
             <aside className="metogology-tip">
               <img src={learn} alt="" />

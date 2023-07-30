@@ -6,7 +6,6 @@ import { getBACKENDurl } from "../components/services/getBACKENDurl";
 const Courses = () => {
   const [dataCourses, setDataCourses] = useState([]);
   const [refesh, setRefesh] = useState(false);
-  const [courseSearch, setCourseSearch] = useState("");
   const url = `${getBACKENDurl}/courses`;
 
   useEffect(() => {
@@ -42,15 +41,8 @@ const Courses = () => {
             type="text"
             className="input-search-course "
             placeholder="Busca tu curso aqui"
-            onChange={(e) => setCourseSearch(e.target.value)}
+            onChange={(e) =>SearchCourse(e, e.target.value.toUpperCase())}
           />
-          <button
-            type="button"
-            className="btn-typical"
-            onClick={(e) => SearchCourse(e, courseSearch.toUpperCase())}
-          >
-            Buscar
-          </button>
           <button className="btn-typical" onClick={defRefresh}>
             Ver todos
           </button>

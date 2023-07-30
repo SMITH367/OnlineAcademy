@@ -1,11 +1,9 @@
 .courses-view-cont {
-
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     margin: 40px auto 40px auto;
     justify-content: center;
-
 }
 
 .courses-course {
@@ -17,8 +15,8 @@
 }
 
 .form-search-course {
-    width: 100%;
-    margin-top: 20px;
+    width: 90%;
+    margin:20px auto auto auto;
 }
 
 .courses-img {
@@ -41,7 +39,6 @@
     }
 
     .courses-img {
-
         width: 50%;
     }
 }
