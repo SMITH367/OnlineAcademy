@@ -36,7 +36,8 @@ const Profile = () => {
             </div>
           </section>
           <section>
-            <div className="change-user p-2 center">
+          <section className="modify-userdata">
+          <div className="change-user p-2 center">
               <h4>Cambiar nombre</h4>
               <form>
                 <input
@@ -57,7 +58,7 @@ const Profile = () => {
               </form>
             </div>
 
-            <div className=" center p-3">
+            <div className="center p-3">
               <h4>Cambiar contraseña</h4>
 
               <form>
@@ -90,6 +91,9 @@ const Profile = () => {
                 />
               </form>
             </div>
+            
+          </section>
+            
           </section>
           <Footer />
         </article>
