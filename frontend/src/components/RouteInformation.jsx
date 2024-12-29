@@ -9,6 +9,7 @@ import "./styles/routeInformation.css";
 const RouteInformation = () => {
   const toget = getRoute(window.location.href);
 
+
   const [dataRoute, setDataRoute] = useState([]);
   const url = `${getBACKENDurl}/route/${toget}`;
 
@@ -18,6 +19,7 @@ const RouteInformation = () => {
     const fetch = async () => {
       const getData = new FetchData(url);
       const routes = await getData.FetchDataApiGet();
+      console.log(routes)
       setDataRoute(routes);
     };
     fetch();
@@ -38,21 +40,22 @@ const RouteInformation = () => {
               <article className="route-information-courses">
                 <h4 className="center">Cursos</h4>
                 {dataRoute.courses.map((el, id) => (
-                  <Link key={id} to={el.url_course} className="r-course-cont">
+                  <Link key={id} to={`/course/${el.ident}`} className="r-course-cont">
                     <section className="r-course-info">
                       <img
                         className="r-course-img r-course-info-el"
                         src={el.logo}
                         alt=""
                       />
-                      <p className="r-course-info-el">{el.name_course}</p>
+                      <p className="r-course-info-el">{el.name}</p>
                     </section>
                   </Link>
                 ))}
               </article>
               <section className="route-information-info center">
                 <img className="route-logo-img" src={dataRoute.logo} alt="" />
-                <h3>{dataRoute.description}</h3>
+                <h3>{dataRoute.name}</h3>
+                <h4>{dataRoute.description}</h4>
               </section>
             </div>
           </div>
