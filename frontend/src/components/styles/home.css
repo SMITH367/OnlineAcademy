@@ -64,8 +64,8 @@
 }
 
 .course-data-home:hover {
-    width: 16%;
-    transition: all .2s;
+    width: 15.1%;
+    transition: all .1s;
 }
 
 .course-data-home img {
