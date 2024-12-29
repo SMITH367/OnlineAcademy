@@ -10,10 +10,7 @@ const route = new Schema({
     description: String,
     color: String,
     logo: String,
-    courses: {
-        type: Array,
-        default: []
-    },
+    courses: [{ type: Schema.Types.ObjectId, ref: 'courses' }],
     ident: String,
 
 })
