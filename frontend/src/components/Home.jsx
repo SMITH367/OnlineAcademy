@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Footer } from "./Footer";
 import useUser from "../hooks/useUser";
 import { Link } from "react-router-dom";
-import { cursos } from "./services/coursesHome";
+import { courses } from "./services/coursesHome";
 import { useGetCourse } from "../hooks/useGetCourse";
 import { CourseHome } from "./CourseInfo";
 import "./styles/home.css";
@@ -15,24 +15,24 @@ import { getBACKENDurl } from "../components/services/getBACKENDurl";
 
 const Home = () => {
   const dataUser = useUser();
-  const [curso1, setCurso1] = useState([]);
-  const [curso2, setCurso2] = useState([]);
-  const [curso3, setCurso3] = useState([]);
-  const [curso4, setCurso4] = useState([]);
-  const [curso5, setCurso5] = useState([]);
-  const [curso6, setCurso6] = useState([]);
+  const [course1, setcourse1] = useState([]);
+  const [course2, setcourse2] = useState([]);
+  const [course3, setcourse3] = useState([]);
+  const [course4, setcourse4] = useState([]);
+  const [course5, setcourse5] = useState([]);
+  const [course6, setcourse6] = useState([]);
 
   const url = `${getBACKENDurl}/course`;
 
   const getCourse = useGetCourse;
 
   useEffect(() => {
-    getCourse(url, cursos.js, setCurso1);
-    getCourse(url, cursos.node, setCurso2);
-    getCourse(url, cursos.git, setCurso3);
-    getCourse(url, cursos.react, setCurso4);
-    getCourse(url, cursos.mongo, setCurso5);
-    getCourse(url, cursos.angular, setCurso6);
+    getCourse(url, courses.js, setcourse1);
+    getCourse(url, courses.node, setcourse2);
+    getCourse(url, courses.git, setcourse3);
+    getCourse(url, courses.react, setcourse4);
+    getCourse(url, courses.mongo, setcourse5);
+    getCourse(url, courses.angular, setcourse6);
 
     // eslint-disable-next-line
   }, []);
@@ -69,14 +69,14 @@ const Home = () => {
 
           <h2 className="center">Algunos de nuestros cursos</h2>
 
-          {curso1 !== null && (
+          {course1 !== null && (
             <div className="course-home-cont center">
-              <CourseHome courseData={curso1}></CourseHome>
-              <CourseHome courseData={curso2}></CourseHome>
-              <CourseHome courseData={curso3}></CourseHome>
-              <CourseHome courseData={curso4}></CourseHome>
-              <CourseHome courseData={curso5}></CourseHome>
-              <CourseHome courseData={curso6}></CourseHome>
+              <CourseHome courseData={course1}></CourseHome>
+              <CourseHome courseData={course2}></CourseHome>
+              <CourseHome courseData={course3}></CourseHome>
+              <CourseHome courseData={course4}></CourseHome>
+              <CourseHome courseData={course5}></CourseHome>
+              <CourseHome courseData={course6}></CourseHome>
             </div>
           )}
           <h2 className="center">¿Como aprovechar nuestra academia?</h2>

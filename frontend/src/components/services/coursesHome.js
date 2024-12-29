@@ -1,4 +1,4 @@
- const cursos = {
+ const courses = {
      mongo: "mongo",
      git: "git",
      js: "js",
@@ -8,5 +8,5 @@
  };
 
  export {
-     cursos
+     courses
  }
