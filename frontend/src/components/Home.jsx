@@ -57,9 +57,12 @@ const Home = () => {
               <Link to="/courses" className="call-action">
                 Cursos
               </Link>
-              <Link to="/register" className="call-action">
+              {!dataUser.login && (
+                <Link to="/register" className="call-action">
                 Registrate
               </Link>
+              )}
+              
             </div>
 
             <div>

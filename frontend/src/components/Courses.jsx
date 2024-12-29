@@ -51,7 +51,8 @@ const Courses = () => {
         {dataCourses.length > 0 && (
           <article className="courses-view-cont center">
             {dataCourses.map((el, id) => (
-              <Link key={id} to={el.url_course} className="courses-course">
+              
+              <Link key={id} to={`/course/${el.ident}`} className="courses-course">
                 <img className="courses-img" src={el.logo} alt="" />
                 <p>{el.name}</p>
               </Link>

@@ -38,7 +38,7 @@ const CourseInformation = () => {
               </aside>
 
               <br />
-              <Link className="to-the-course" to={dataCourses.linkC}>
+              <Link className="to-the-course" to={`/view/${dataCourses.ident}`}>
                 Ir al curso
               </Link>
             </article>
