@@ -55,4 +55,28 @@ router.get('/view/:course', async (req, res) => {
     })
     res.send(courses)
 })
+
+
+router.post('/course/add', async (req, res) => {
+
+    courseData = {
+        name: req.body.name,
+        description: req.body.description,
+        instructor: req.body.instructor,
+        video: req.body.video,
+        resourses: req.body.resourses,
+        level: req.body.level,
+        comentaries: [],
+        logo: req.body.logo,
+        ident: req.body.ident,
+        proyectDescription: req.body.proyectDescription
+    }
+    let newCourse = new course(courseData)
+    await newCourse.save()
+
+    res.send(newCourse)
+
+
+
+})
 module.exports = router
